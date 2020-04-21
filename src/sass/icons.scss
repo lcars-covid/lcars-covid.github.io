@@ -1,0 +1,36 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-skull:before {
+  content: "\e904";
+}
+.icon-man1:before {
+  content: "\e903";
+}
+.icon-hospital-o:before {
+  content: "\e900";
+}
+.icon-person_add:before {
+  content: "\e901";
+}
+.icon-people_alt:before {
+  content: "\e902";
+}
+.icon-sphere:before {
+  content: "\e9c9";
+}
+.icon-man:before {
+  content: "\e9dc";
+}

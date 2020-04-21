@@ -1,0 +1,88 @@
+@import "mixins";
+@import "bootstrap";
+@import "text";
+@import "typography";
+@import "chart";
+@import "icons";
+
+.bright-header {
+  background-image:linear-gradient(to right, #DD185A 10%, #FE6702 90%);
+}
+
+.navbar-light {
+  color: rgba(scale-color(#DD185A, $lightness: 80%),.8);
+}
+
+.stat-card {
+  border-radius:rem(8);
+  position: relative;
+  &.blue {
+    background-image: linear-gradient(45deg, #19E5D9 10%,#5D78E9 90%);
+    color: rgba(scale-color(#19E5D9, $lightness: 80%),.8);
+    &.asian {
+      background-image: linear-gradient(45deg, #9639a8 10%,#593D90 90%);
+      color: rgba(scale-color(#9639a8, $lightness: 80%),.8);
+    }
+    &.euro {
+      background-image: linear-gradient(45deg, rgb(126, 244, 253) 10%,#209AA4 90%);
+      color: rgba(scale-color(#7EFDD8, $lightness: 80%),.8);
+    }
+    &.afro {
+      background-image: linear-gradient(45deg, #58889C 10%,#486B71 90%);
+      color: rgba(scale-color(#58889C, $lightness: 80%),.8);
+    }
+  }
+  &.yellow {
+    background-image: linear-gradient(45deg, #FFDC40 10%,#FF8558 90%);
+    color: rgba(scale-color(#FFDC40, $lightness: 80%),.8);
+    &.asian {
+      background-image: linear-gradient(45deg, #F4D345 10%,rgb(218, 125, 5) 90%);
+      color: rgba(scale-color(#F4D345, $lightness: 80%),.8);
+    }
+    &.euro {
+      background-image: linear-gradient(45deg, #F05804 10%,#A94918 90%);
+      color: rgba(scale-color(#F05804, $lightness: 80%),.8);
+    }
+    &.afro {
+      background-image: linear-gradient(45deg,#FECF00  10%,#FD521B 90%);
+      color: rgba(scale-color(#FD521B, $lightness: 80%),.8);
+    }
+  }
+  &.red {
+    background-image: linear-gradient(45deg, #F54F9F 10%,#FE7474 90%);
+    color: rgba(scale-color(#F54F9F, $lightness: 80%),.8);
+    &.asian {
+      background-image: linear-gradient(45deg, #AA0609 10%,#7E0608 90%);
+      color: rgba(scale-color(#AA0609, $lightness: 80%),.8);
+    }
+    &.euro {
+      background-image: linear-gradient(45deg, #F1D407 10%,#D00904 90%);
+      color: rgba(scale-color(#F1D407, $lightness: 80%),.8);
+    }
+    &.afro {
+      background-image: linear-gradient(45deg, #D42023 10%,#4F0F03 90%);
+      color: rgba(scale-color(#D42023, $lightness: 80%),.8);
+    }
+  }
+  &.green {
+    background-image: linear-gradient(45deg, #41E496 10%,#3BB2B6 90%);
+    color: rgba(scale-color(#41E496, $lightness: 80%),.8);
+    &.asian {
+      background-image: linear-gradient(45deg, #6EBBA2 10%,#4A6E51 90%);
+      color: rgba(scale-color(#6EBBA2, $lightness: 80%),.8);
+    }
+    &.euro {
+      background-image: linear-gradient(45deg, #648862 10%,#261C13 90%);
+      color: rgba(scale-color(#648862, $lightness: 80%),.8);
+    }
+    &.afro {
+      background-image: linear-gradient(45deg, #80600A 10%,#3B3C09 90%);
+      color: rgba(scale-color(#80600A, $lightness: 80%),.8);
+    }
+  }
+}
+
+.dropdown-menu {
+  max-height:rem(200);
+  overflow: scroll;
+}
