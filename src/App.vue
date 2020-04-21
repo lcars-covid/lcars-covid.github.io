@@ -65,7 +65,7 @@
               >
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(asiaStats[0].cases.recovered).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -78,7 +78,7 @@
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ "+" + Number(asiaStats[0].cases.new).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -91,7 +91,7 @@
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(asiaStats[0].cases.active).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -104,7 +104,7 @@
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(asiaStats[0].cases.recovered).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -120,7 +120,7 @@
               >
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(euroStats[0].cases.recovered).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -133,7 +133,7 @@
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ "+" + Number(euroStats[0].cases.new).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -146,7 +146,7 @@
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(euroStats[0].cases.active).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -159,7 +159,7 @@
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(euroStats[0].cases.recovered).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -175,7 +175,7 @@
               >
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{
                       Number(africaStats[0].cases.recovered).toLocaleString()
                     }}
@@ -190,7 +190,7 @@
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{
                       "+" + Number(africaStats[0].cases.new).toLocaleString()
                     }}
@@ -205,7 +205,7 @@
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{ Number(africaStats[0].cases.active).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -218,7 +218,7 @@
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-right">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right">
                     {{
                       Number(africaStats[0].cases.recovered).toLocaleString()
                     }}
