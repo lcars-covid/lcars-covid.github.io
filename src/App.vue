@@ -21,14 +21,14 @@
       <h2 class="text-default text-uppercase mt-3">WORLDWIDE STATS</h2>
 
       <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="stat-card blue text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-sphere"></div>
             <h2>{{ worldStats[0].cases.total.toLocaleString() }}</h2>
             <p class="text-uppercase mb-0">Total Cases</p>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="stat-card yellow text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-person_add"></div>
             <h2>
@@ -37,14 +37,14 @@
             <p class="text-uppercase mb-0">New Cases</p>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="stat-card red text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-hospital-o"></div>
             <h2>{{ Number(worldStats[0].cases.active).toLocaleString() }}</h2>
             <p class="text-uppercase mb-0">Active</p>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-6">
           <div class="stat-card green text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-man1"></div>
             <h2>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-6">
           <h4 class="text-default text-uppercase mt-3">Regional STATS</h4>
           <div class="row">
             <div class="col-lg-6">
@@ -114,7 +114,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase">Europe</h5>
+              <h5 class="text-muted text-uppercase mt-md-3">Europe</h5>
               <div
                 class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -169,7 +169,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase">Africa</h5>
+              <h5 class="text-muted text-uppercase mt-md-3">Africa</h5>
               <div
                 class="stat-card afro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -298,7 +298,7 @@
             
           </div>
         </div>
-        <div class="col-lg-6 pt-lg-4">
+        <div class="col-lg-6 col-md-6 pt-lg-4">
           <div class="custom-info right">
            <b-dropdown
             id="dropdown-1"
