@@ -264,6 +264,24 @@
                           }}</span
                         >
                       </div>
+                      <div class="col-12 col-lg-6 mt-1">
+                        <span
+                          class="badge badge-pill badge-warning d-flex align-items-center"
+                          ><span class="icomoon icon-person_add"></span>
+                          +{{
+                           Number(filteredItems.cases.new).toLocaleString()
+                          }}</span
+                        >
+                      </div>
+                      <div class="col-12 col-lg-6 mt-1">
+                        <span
+                          class="badge badge-pill badge-success d-flex align-items-center"
+                          ><span class="icomoon icon-man1"></span>
+                          {{
+                           Number(filteredItems.cases.recovered).toLocaleString()
+                          }}</span
+                        >
+                      </div>
                     </div>
                   </div>
                 </div>
