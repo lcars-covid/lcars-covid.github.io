@@ -28,7 +28,7 @@
             <p class="text-uppercase mb-0">Total Cases</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 mt-1 mt-sm-0">
           <div class="stat-card yellow text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-person_add"></div>
             <h2>
@@ -37,14 +37,14 @@
             <p class="text-uppercase mb-0">New Cases</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 mt-1 mt-sm-0">
           <div class="stat-card red text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-hospital-o"></div>
             <h2>{{ Number(worldStats[0].cases.active).toLocaleString() }}</h2>
             <p class="text-uppercase mb-0">Active</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 mt-1 mt-sm-0">
           <div class="stat-card green text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-man1"></div>
             <h2>
@@ -74,7 +74,7 @@
                 </div>
               </div>
               <div
-                class="stat-card asian yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card asian yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -87,7 +87,7 @@
                 </div>
               </div>
               <div
-                class="stat-card asian red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card asian red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -100,7 +100,7 @@
                 </div>
               </div>
               <div
-                class="stat-card asian green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card asian green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -129,7 +129,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -142,7 +142,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -155,7 +155,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -168,6 +168,117 @@
                 </div>
               </div>
             </div>
+            <div class="col-lg-6">
+              <h5 class="text-muted text-uppercase mt-md-3">North America</h5>
+              <div
+                class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+              >
+                <div class="floating-icon icomoon icon-sphere"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(northAmericaStats[0].cases.recovered).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Total Cases
+                  </p>
+                </div>
+              </div>
+              <div
+                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+              >
+                <div class="floating-icon icomoon icon-person_add"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ "+" + Number(northAmericaStats[0].cases.new).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    New Cases
+                  </p>
+                </div>
+              </div>
+              <div
+                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+              >
+                <div class="floating-icon icomoon icon-hospital-o"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(northAmericaStats[0].cases.active).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Active Cases
+                  </p>
+                </div>
+              </div>
+              <div
+                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+              >
+                <div class="floating-icon icomoon icon-man1"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(northAmericaStats[0].cases.recovered).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Recovered
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h5 class="text-muted text-uppercase mt-md-3">South America</h5>
+              <div
+                class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+              >
+                <div class="floating-icon icomoon icon-sphere"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(southAmericaStats[0].cases.recovered).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Total Cases
+                  </p>
+                </div>
+              </div>
+              <div
+                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+              >
+                <div class="floating-icon icomoon icon-person_add"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ "+" + Number(southAmericaStats[0].cases.new).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    New Cases
+                  </p>
+                </div>
+              </div>
+              <div
+                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+              >
+                <div class="floating-icon icomoon icon-hospital-o"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(southAmericaStats[0].cases.active).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Active Cases
+                  </p>
+                </div>
+              </div>
+              <div
+                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+              >
+                <div class="floating-icon icomoon icon-man1"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(southAmericaStats[0].cases.recovered).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Recovered
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div class="col-lg-6">
               <h5 class="text-muted text-uppercase mt-md-3">Africa</h5>
               <div
@@ -186,7 +297,7 @@
                 </div>
               </div>
               <div
-                class="stat-card afro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card afro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -201,7 +312,7 @@
                 </div>
               </div>
               <div
-                class="stat-card afro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card afro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -214,7 +325,7 @@
                 </div>
               </div>
               <div
-                class="stat-card afro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
+                class="stat-card afro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -231,202 +342,207 @@
             </div>
             <div class="col-lg-6 order-lg-1 mt-3 mt-lg-0">
               <div class="custom-info left">
-                              <paginate
-                name="countries"
-                :list="filteredItems"
-                :per="3"
-                class="pl-0"
-              >
-                <div
-                  v-for="filteredItems in paginated('countries')"
-                  class="card mb-2"
+                <paginate
+                  name="countries"
+                  :list="filteredItems"
+                  :per="3"
+                  class="pl-0"
                 >
-                  <div class="card-header bg-info text-uppercase">
-                    {{ filteredItems.country }}
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-12 col-lg-6">
-                        <span
-                          class="badge badge-pill badge-info d-flex align-items-center"
-                          ><span class="icomoon icon-sphere"></span>
-                          {{
-                            Number(filteredItems.cases.total).toLocaleString()
-                          }}</span
-                        >
-                      </div>
-                      <div class="col-12 col-lg-6">
-                        <span
-                          class="badge badge-pill badge-dark d-flex align-items-center"
-                          ><span class="icomoon icon-skull"></span>
-                          {{
-                            Number(filteredItems.deaths.total).toLocaleString()
-                          }}</span
-                        >
-                      </div>
-                      <div class="col-12 col-lg-6 mt-1">
-                        <span
-                          class="badge badge-pill badge-warning d-flex align-items-center"
-                          ><span class="icomoon icon-person_add"></span>
-                          +{{
-                           Number(filteredItems.cases.new).toLocaleString()
-                          }}</span
-                        >
-                      </div>
-                      <div class="col-12 col-lg-6 mt-1">
-                        <span
-                          class="badge badge-pill badge-success d-flex align-items-center"
-                          ><span class="icomoon icon-man1"></span>
-                          {{
-                           Number(filteredItems.cases.recovered).toLocaleString()
-                          }}</span
-                        >
+                  <div
+                    v-for="filteredItems in paginated('countries')"
+                    class="card mb-2"
+                    :key="filteredItems.country"
+                  >
+                    <div class="card-header bg-info text-uppercase">
+                      {{ filteredItems.country }}
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-12 col-lg-6">
+                          <span
+                            class="badge badge-pill badge-info d-flex align-items-center"
+                            ><span class="icomoon icon-sphere"></span>
+                            {{
+                              Number(filteredItems.cases.total).toLocaleString()
+                            }}</span
+                          >
+                        </div>
+                        <div class="col-12 col-lg-6 mt-1">
+                          <span
+                            class="badge badge-pill badge-dark d-flex align-items-center"
+                            ><span class="icomoon icon-skull"></span>
+                            {{
+                              Number(
+                                filteredItems.deaths.total
+                              ).toLocaleString()
+                            }}</span
+                          >
+                        </div>
+                        <div class="col-12 col-lg-6 mt-1">
+                          <span
+                            class="badge badge-pill badge-warning d-flex align-items-center"
+                            ><span class="icomoon icon-person_add"></span> +{{
+                              Number(filteredItems.cases.new).toLocaleString()
+                            }}</span
+                          >
+                        </div>
+                        <div class="col-12 col-lg-6 mt-1">
+                          <span
+                            class="badge badge-pill badge-success d-flex align-items-center"
+                            ><span class="icomoon icon-man1"></span>
+                            {{
+                              Number(
+                                filteredItems.cases.recovered
+                              ).toLocaleString()
+                            }}</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </paginate>
-              <paginate-links
-                for="countries"
-                :simple="{
-                  prev: 'Back',
-                  next: 'Next',
-                }"
-                :classes="{
-                  ul: ['row', 'list-unstyled'],
-                  '.next': ['col-6', 'text-right'],
-                  '.prev': ['col-6', 'text-left'],
-                  '.next > a': [
-                    'btn',
-                    'btn-primary',
-                    'color-white',
-                    'text-uppercase',
-                  ],
-                  '.prev > a': [
-                    'btn',
-                    'btn-primary',
-                    'color-white',
-                    'text-uppercase',
-                  ],
-                }"
-              ></paginate-links>
+                </paginate>
+                <paginate-links
+                  for="countries"
+                  :simple="{
+                    prev: 'Back',
+                    next: 'Next',
+                  }"
+                  :classes="{
+                    ul: ['row', 'list-unstyled'],
+                    '.next': ['col-6', 'text-right'],
+                    '.prev': ['col-6', 'text-left'],
+                    '.next > a': [
+                      'btn',
+                      'btn-primary',
+                      'color-white',
+                      'text-uppercase',
+                    ],
+                    '.prev > a': [
+                      'btn',
+                      'btn-primary',
+                      'color-white',
+                      'text-uppercase',
+                    ],
+                  }"
+                ></paginate-links>
               </div>
-
             </div>
-            
           </div>
         </div>
         <div class="col-lg-6 col-md-6 pt-lg-4">
           <div class="custom-info right">
-           <b-dropdown
-            id="dropdown-1"
-            :text="namedCountry.toUpperCase()"
-            variant="muted"
-            class="btn-muted text-muted text-uppercase mt-lg-3 d-block"
-          >
-            <div class="pl-3 pr-3">
-              <input
-                type="text"
-                v-model="search"
-                placeholder="Filter by Country Name"
-                class="form-control mt-0 mt-md-2 mb-0 mb-md-2"
-              />
+            <b-dropdown
+              id="dropdown-1"
+              :text="namedCountry.toUpperCase()"
+              variant="muted"
+              class="btn-muted text-muted text-uppercase mt-lg-3 d-block"
+            >
+              <div class="pl-3 pr-3">
+                <input
+                  type="text"
+                  v-model="search"
+                  placeholder="Filter by Country Name"
+                  class="form-control mt-0 mt-md-2 mb-0 mb-md-2"
+                />
+              </div>
+              <b-dropdown-item
+                v-for="result in filteredItems"
+                :key="result._id"
+                v-if="
+                  result.country != 'Africa' &&
+                    result.country != 'All' &&
+                    result.country != 'Asia' &&
+                    result.country != 'Europe' &&
+                    result.country != 'North-America' &&
+                    result.country != 'South-America' &&
+                    result.country != 'R&eacute;union'
+                "
+                v-index="result.country"
+                @click="getStats(result.country)"
+                >{{ result.country }}</b-dropdown-item
+              >
+            </b-dropdown>
+            <div class="chart-box mb-3">
+              <graph-area
+                :renderInterval="1000"
+                :colors="['#90A7ED', '#67CBFF']"
+                :theme="'classic'"
+                :height="200"
+                :axis-full-mode="true"
+                :shape="'normal'"
+                :opacity="0.7"
+                :borderLine="false"
+                :textRotateX="70"
+                :axisXStyle="'none'"
+                :axisYStyle="'none'"
+                :axisStep="100"
+                :axisXPosition="'bottom'"
+                :paddingTop="30"
+                :paddingBottom="70"
+                :paddingLeft="60"
+                :paddingRight="20"
+                :labels="graphLabel"
+                :values="graphValues"
+              >
+                <legends
+                  :names="['MORTALITY RATIO', 'RECOVERY RATIO']"
+                ></legends>
+                <guideline :tooltip-y="true"></guideline>
+              </graph-area>
             </div>
-            <b-dropdown-item
-              v-for="result in filteredItems"
-              :key="result._id"
-              v-if="
-                result.country != 'Africa' &&
-                  result.country != 'All' &&
-                  result.country != 'Asia' &&
-                  result.country != 'Europe' &&
-                  result.country != 'R&eacute;union'
-              "
-              v-index="result.country"
-              @click="getStats(result.country)"
-              >{{ result.country }}</b-dropdown-item
-            >
-          </b-dropdown>
-          <div class="chart-box mb-3">
-            <graph-area
-              :renderInterval="1000"
-              :colors="['#90A7ED', '#67CBFF']"
-              :theme="'classic'"
-              :height="200"
-              :axis-full-mode="true"
-              :shape="'normal'"
-              :opacity="0.7"
-              :borderLine="false"
-              :textRotateX="70"
-              :axisXStyle="'none'"
-              :axisYStyle="'none'"
-              :axisStep="100"
-              :axisXPosition="'bottom'"
-              :paddingTop="30"
-              :paddingBottom="70"
-              :paddingLeft="60"
-              :paddingRight="20"
-              :labels="graphLabel"
-              :values="graphValues"
-            >
-              <legends :names="['MORTALITY RATIO', 'RECOVERY RATIO']"></legends>
-              <guideline :tooltip-y="true"></guideline>
-            </graph-area>
-          </div>
-          <div class="chart-box mb-3">
-            <graph-area
-              :renderInterval="1000"
-              :colors="['orange']"
-              :theme="'classic'"
-              :height="200"
-              :axis-full-mode="true"
-              :shape="'normal'"
-              :opacity="0.7"
-              :borderLine="false"
-              :textRotateX="70"
-              :axisXStyle="'none'"
-              :axisYStyle="'none'"
-              :axisXPosition="'bottom'"
-              :paddingTop="30"
-              :paddingBottom="70"
-              :paddingLeft="60"
-              :paddingRight="20"
-              :labels="graphLabel"
-              :values="graphValues2"
-            >
-              <legends :names="['TOTAL CASES']"></legends>
+            <div class="chart-box mb-3">
+              <graph-area
+                :renderInterval="1000"
+                :colors="['orange']"
+                :theme="'classic'"
+                :height="200"
+                :axis-full-mode="true"
+                :shape="'normal'"
+                :opacity="0.7"
+                :borderLine="false"
+                :textRotateX="70"
+                :axisXStyle="'none'"
+                :axisYStyle="'none'"
+                :axisXPosition="'bottom'"
+                :paddingTop="30"
+                :paddingBottom="70"
+                :paddingLeft="60"
+                :paddingRight="20"
+                :labels="graphLabel"
+                :values="graphValues2"
+              >
+                <legends :names="['TOTAL CASES']"></legends>
 
-              <guideline :tooltip-y="true"></guideline>
-            </graph-area>
-          </div>
-          <div class="chart-box mb-3">
-            <graph-area
-              :renderInterval="1000"
-              :colors="['black', 'orange']"
-              :theme="'classic'"
-              :height="200"
-              :axis-full-mode="true"
-              :shape="'normal'"
-              :opacity="0.7"
-              :borderLine="false"
-              :textRotateX="70"
-              :axisXStyle="'none'"
-              :axisYStyle="'none'"
-              :axisXPosition="'bottom'"
-              :paddingTop="30"
-              :paddingBottom="70"
-              :paddingLeft="60"
-              :paddingRight="20"
-              :labels="graphLabel"
-              :values="graphValues3"
-            >
-              <legends :names="['TOTAL DEATH']"></legends>
+                <guideline :tooltip-y="true"></guideline>
+              </graph-area>
+            </div>
+            <div class="chart-box mb-3">
+              <graph-area
+                :renderInterval="1000"
+                :colors="['black', 'orange']"
+                :theme="'classic'"
+                :height="200"
+                :axis-full-mode="true"
+                :shape="'normal'"
+                :opacity="0.7"
+                :borderLine="false"
+                :textRotateX="70"
+                :axisXStyle="'none'"
+                :axisYStyle="'none'"
+                :axisXPosition="'bottom'"
+                :paddingTop="30"
+                :paddingBottom="70"
+                :paddingLeft="60"
+                :paddingRight="20"
+                :labels="graphLabel"
+                :values="graphValues3"
+              >
+                <legends :names="['TOTAL DEATH']"></legends>
 
-              <guideline :tooltip-y="true"></guideline>
-            </graph-area>
+                <guideline :tooltip-y="true"></guideline>
+              </graph-area>
+            </div>
           </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -434,7 +550,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -449,8 +564,7 @@ export default {
       paginate: ["countries"],
     };
   },
-  components: {
-  },
+  components: {},
   mounted() {
     this.getData();
     this.getStats("");
@@ -466,6 +580,16 @@ export default {
     asiaStats() {
       return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("asia") > -1;
+      });
+    },
+    northAmericaStats() {
+      return this.results.filter((item) => {
+        return item.country.toLowerCase().indexOf("north-america") > -1;
+      });
+    },
+    southAmericaStats() {
+      return this.results.filter((item) => {
+        return item.country.toLowerCase().indexOf("south-america") > -1;
       });
     },
     africaStats() {
@@ -583,7 +707,7 @@ a.btn.btn-primary.color-white {
 .b-dropdown {
   &.d-block {
     .dropdown-toggle {
-      display:block;
+      display: block;
       min-width: 100%;
     }
   }
@@ -597,6 +721,4 @@ a.btn.btn-primary.color-white {
   z-index: 1;
   font-size: rem(32);
 }
-
-
 </style>
