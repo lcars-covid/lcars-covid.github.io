@@ -28,7 +28,7 @@
             <p class="text-uppercase mb-0">Total Cases</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-sm-0">
+        <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
           <div class="stat-card yellow text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-person_add"></div>
             <h2>
@@ -37,14 +37,14 @@
             <p class="text-uppercase mb-0">New Cases</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-sm-0">
+        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
           <div class="stat-card red text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-hospital-o"></div>
             <h2>{{ Number(worldStats[0].cases.active).toLocaleString() }}</h2>
             <p class="text-uppercase mb-0">Active</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-sm-0">
+        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
           <div class="stat-card green text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-man1"></div>
             <h2>
@@ -74,7 +74,7 @@
                 </div>
               </div>
               <div
-                class="stat-card asian yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card asian yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -87,7 +87,7 @@
                 </div>
               </div>
               <div
-                class="stat-card asian red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card asian red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -100,7 +100,7 @@
                 </div>
               </div>
               <div
-                class="stat-card asian green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card asian green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -114,7 +114,7 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-md-3">Europe</h5>
+              <h5 class="text-muted text-uppercase mt-md-0">Europe</h5>
               <div
                 class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -129,7 +129,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -142,7 +142,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -155,7 +155,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -184,7 +184,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -197,7 +197,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -210,7 +210,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -239,7 +239,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -252,7 +252,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -265,7 +265,7 @@
                 </div>
               </div>
               <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -297,7 +297,7 @@
                 </div>
               </div>
               <div
-                class="stat-card afro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card afro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
@@ -312,7 +312,7 @@
                 </div>
               </div>
               <div
-                class="stat-card afro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card afro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
@@ -325,7 +325,7 @@
                 </div>
               </div>
               <div
-                class="stat-card afro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-sm-0"
+                class="stat-card afro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
               >
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
@@ -344,17 +344,17 @@
               <div class="custom-info left">
                 <paginate
                   name="countries"
-                  :list="filteredItems"
+                  :list="noContinents"
                   :per="3"
                   class="pl-0"
                 >
                   <div
-                    v-for="filteredItems in paginated('countries')"
+                    v-for="noContinents in paginated('countries')"
                     class="card mb-2"
-                    :key="filteredItems.country"
+                    :key="noContinents.country"
                   >
                     <div class="card-header bg-info text-uppercase">
-                      {{ filteredItems.country }}
+                      {{ noContinents.country }}
                     </div>
                     <div class="card-body">
                       <div class="row">
@@ -363,17 +363,17 @@
                             class="badge badge-pill badge-info d-flex align-items-center"
                             ><span class="icomoon icon-sphere"></span>
                             {{
-                              Number(filteredItems.cases.total).toLocaleString()
+                              Number(noContinents.cases.total).toLocaleString()
                             }}</span
                           >
                         </div>
-                        <div class="col-12 col-lg-6 mt-1">
+                        <div class="col-12 col-lg-6 mt-1 mt-md-0">
                           <span
                             class="badge badge-pill badge-dark d-flex align-items-center"
                             ><span class="icomoon icon-skull"></span>
                             {{
                               Number(
-                                filteredItems.deaths.total
+                                noContinents.deaths.total
                               ).toLocaleString()
                             }}</span
                           >
@@ -382,7 +382,7 @@
                           <span
                             class="badge badge-pill badge-warning d-flex align-items-center"
                             ><span class="icomoon icon-person_add"></span> +{{
-                              Number(filteredItems.cases.new).toLocaleString()
+                              Number(noContinents.cases.new).toLocaleString()
                             }}</span
                           >
                         </div>
@@ -392,7 +392,7 @@
                             ><span class="icomoon icon-man1"></span>
                             {{
                               Number(
-                                filteredItems.cases.recovered
+                                noContinents.cases.recovered
                               ).toLocaleString()
                             }}</span
                           >
@@ -574,6 +574,13 @@ export default {
       return this.results.filter((item) => {
         return (
           item.country.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+        );
+      });
+    },
+    noContinents() {
+      return this.results.filter((item) => {
+        return (
+            item.country !== 'North-America' && item.country !=='Asia'  && item.country !=='South-America' && item.country !=='Europe' && item.country !=='All' && item.country !=='Africa'
         );
       });
     },
