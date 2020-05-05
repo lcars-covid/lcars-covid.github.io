@@ -176,7 +176,11 @@
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(northAmericaStats[0].cases.recovered).toLocaleString() }}
+                    {{
+                      Number(
+                        northAmericaStats[0].cases.recovered
+                      ).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Total Cases
@@ -189,7 +193,10 @@
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ "+" + Number(northAmericaStats[0].cases.new).toLocaleString() }}
+                    {{
+                      "+" +
+                        Number(northAmericaStats[0].cases.new).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     New Cases
@@ -202,7 +209,9 @@
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(northAmericaStats[0].cases.active).toLocaleString() }}
+                    {{
+                      Number(northAmericaStats[0].cases.active).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Active Cases
@@ -215,7 +224,11 @@
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(northAmericaStats[0].cases.recovered).toLocaleString() }}
+                    {{
+                      Number(
+                        northAmericaStats[0].cases.recovered
+                      ).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Recovered
@@ -231,7 +244,11 @@
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(southAmericaStats[0].cases.recovered).toLocaleString() }}
+                    {{
+                      Number(
+                        southAmericaStats[0].cases.recovered
+                      ).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Total Cases
@@ -244,7 +261,10 @@
                 <div class="floating-icon icomoon icon-person_add"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ "+" + Number(southAmericaStats[0].cases.new).toLocaleString() }}
+                    {{
+                      "+" +
+                        Number(southAmericaStats[0].cases.new).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     New Cases
@@ -257,7 +277,9 @@
                 <div class="floating-icon icomoon icon-hospital-o"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(southAmericaStats[0].cases.active).toLocaleString() }}
+                    {{
+                      Number(southAmericaStats[0].cases.active).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Active Cases
@@ -270,7 +292,11 @@
                 <div class="floating-icon icomoon icon-man1"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(southAmericaStats[0].cases.recovered).toLocaleString() }}
+                    {{
+                      Number(
+                        southAmericaStats[0].cases.recovered
+                      ).toLocaleString()
+                    }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Recovered
@@ -372,9 +398,7 @@
                             class="badge badge-pill badge-dark d-flex align-items-center"
                             ><span class="icomoon icon-skull"></span>
                             {{
-                              Number(
-                                noContinents.deaths.total
-                              ).toLocaleString()
+                              Number(noContinents.deaths.total).toLocaleString()
                             }}</span
                           >
                         </div>
@@ -462,6 +486,42 @@
                 >{{ result.country }}</b-dropdown-item
               >
             </b-dropdown>
+            <div v-if="focusedCountryStats.length < 2" class="row mb-3">
+              <div class="col-6">              <span
+                class="badge badge-pill badge-info d-flex align-items-center"
+                ><span class="icomoon icon-sphere"></span>
+                {{
+                  Number(focusedCountryStats[0].cases.total).toLocaleString()
+                }}
+                </span></div>
+              <div class="col-6">
+              <span
+                class="badge badge-pill badge-dark d-flex align-items-center"
+                ><span class="icomoon icon-skull"></span>
+                {{
+                  Number(focusedCountryStats[0].deaths.total).toLocaleString()
+                }}</span
+              ></div>
+              <div class="col-6 mt-1">
+                              <span
+                class="badge badge-pill badge-warning d-flex align-items-center"
+                ><span class="icomoon icon-person_add"></span> +
+                {{ Number(focusedCountryStats[0].cases.new).toLocaleString() }}
+              </span>
+              </div>
+              <div class="col-6 mt-1">
+                              <span
+                class="badge badge-pill badge-success d-flex align-items-center"
+                ><span class="icomoon icon-man1"></span>
+                {{
+                  Number(
+                    focusedCountryStats[0].cases.recovered
+                  ).toLocaleString()
+                }}</span
+              >
+              </div>
+              <!-- {{focusedCountryStats[0].day}} -->
+            </div>
             <div class="chart-box mb-3">
               <graph-area
                 :renderInterval="1000"
@@ -561,6 +621,7 @@ export default {
       graphLabel: [],
       getCountryStats: "",
       namedCountry: "",
+      focusedCountryName: "",
       paginate: ["countries"],
     };
   },
@@ -580,7 +641,12 @@ export default {
     noContinents() {
       return this.results.filter((item) => {
         return (
-            item.country !== 'North-America' && item.country !=='Asia'  && item.country !=='South-America' && item.country !=='Europe' && item.country !=='All' && item.country !=='Africa'
+          item.country !== "North-America" &&
+          item.country !== "Asia" &&
+          item.country !== "South-America" &&
+          item.country !== "Europe" &&
+          item.country !== "All" &&
+          item.country !== "Africa"
         );
       });
     },
@@ -614,6 +680,15 @@ export default {
         return item.country.toLowerCase().indexOf("all") > -1;
       });
     },
+    focusedCountryStats() {
+      return this.results.filter((item) => {
+        return (
+          item.country
+            .toLowerCase()
+            .indexOf(this.focusedCountryName.toLowerCase()) > -1
+        );
+      });
+    },
   },
   methods: {
     getData() {
@@ -634,11 +709,11 @@ export default {
     },
     getStats(country) {
       var fetchURL = "";
-
       if (country.length == 0) {
         fetchURL = "https://coronavirus-map.p.rapidapi.com/v1/spots/summary";
         this.namedCountry = "World";
       } else {
+        this.focusedCountryName = country;
         fetchURL =
           "https://coronavirus-map.p.rapidapi.com/v1/spots/month?region=" +
           country;
@@ -654,7 +729,6 @@ export default {
       })
         .then((response) => response.json())
         .then((data) => {
-          //this.worldStats = data.data;
           var graphLabel = [];
           var graphValues = [];
           var graphValues2 = [];
@@ -674,9 +748,6 @@ export default {
             graphValues2.push(data.data[label].recovery_ratio);
             graphValues3.push(data.data[label].total_cases);
             graphValues4.push(data.data[label].deaths);
-
-            // console.log('cases'+data.data[label].total_cases);
-            // console.log('deaths'+data.data[label].deaths);
           }
           this.graphLabel = graphLabel.reverse();
           valueToPush = graphValues.reverse();
@@ -687,7 +758,6 @@ export default {
           this.graphValues.push(valueToPush2);
           this.graphValues2.push(valueToPush3);
           this.graphValues3.push(valueToPush4);
-          // console.log(this.graphValues2);
         });
     },
   },
