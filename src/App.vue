@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row regional-stats">
         <div class="col-lg-6 col-md-6">
           <h4 class="text-default text-uppercase mt-3">Regional STATS</h4>
           <div class="row">
@@ -66,7 +66,7 @@
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(asiaStats[0].cases.recovered).toLocaleString() }}
+                    {{ Number(asiaStats[0].cases.total).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Total Cases
@@ -121,7 +121,7 @@
                 <div class="floating-icon icomoon icon-sphere"></div>
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    {{ Number(euroStats[0].cases.recovered).toLocaleString() }}
+                    {{ Number(euroStats[0].cases.total).toLocaleString() }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
                     Total Cases
@@ -178,7 +178,7 @@
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
                     {{
                       Number(
-                        northAmericaStats[0].cases.recovered
+                        northAmericaStats[0].cases.total
                       ).toLocaleString()
                     }}
                   </h2>
@@ -246,7 +246,7 @@
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
                     {{
                       Number(
-                        southAmericaStats[0].cases.recovered
+                        southAmericaStats[0].cases.total
                       ).toLocaleString()
                     }}
                   </h2>
@@ -314,7 +314,7 @@
                 <div class="row align-items-center">
                   <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
                     {{
-                      Number(africaStats[0].cases.recovered).toLocaleString()
+                      Number(africaStats[0].cases.total).toLocaleString()
                     }}
                   </h2>
                   <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
@@ -797,5 +797,10 @@ a.btn.btn-primary.color-white {
   transform: translateY(-50%);
   z-index: 1;
   font-size: rem(32);
+}
+.regional-stats {
+  .icomoon {
+    opacity:.3;
+  }
 }
 </style>
