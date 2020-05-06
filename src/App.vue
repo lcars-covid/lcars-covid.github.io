@@ -52,7 +52,7 @@
             <p class="text-uppercase mb-0">Recovered</p>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
+        <div class="col-lg-3 col-md-6 mt-1 mt-lg-3">
           <div class="stat-card black text-center pt-3 pb-3 pl-3 pr-3">
             <div class="floating-icon icomoon icon-skull"></div>
             <h2>
