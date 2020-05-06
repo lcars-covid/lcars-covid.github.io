@@ -19,7 +19,6 @@
     </nav>
     <div class="container">
       <h2 class="text-default text-uppercase mt-3">WORLDWIDE STATS</h2>
-
       <div class="row">
         <div class="col-lg-3 col-md-6">
           <div class="stat-card blue text-center pt-3 pb-3 pl-3 pr-3">
@@ -51,6 +50,15 @@
               {{ Number(worldStats[0].cases.recovered).toLocaleString() }}
             </h2>
             <p class="text-uppercase mb-0">Recovered</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
+          <div class="stat-card black text-center pt-3 pb-3 pl-3 pr-3">
+            <div class="floating-icon icomoon icon-skull"></div>
+            <h2>
+              {{ Number(worldStats[0].deaths.total).toLocaleString() }}
+            </h2>
+            <p class="text-uppercase mb-0">Deaths</p>
           </div>
         </div>
       </div>
@@ -112,9 +120,22 @@
                   </p>
                 </div>
               </div>
+              <div
+                class="stat-card asian black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
+              >
+                <div class="floating-icon icomoon icon-skull"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(asiaStats[0].deaths.total).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Deaths
+                  </p>
+                </div>
+              </div>
             </div>
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-md-0">Europe</h5>
+              <h5 class="text-muted text-uppercase mt-3 mt-md-0">Europe</h5>
               <div
                 class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -167,9 +188,22 @@
                   </p>
                 </div>
               </div>
+              <div
+                class="stat-card euro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
+              >
+                <div class="floating-icon icomoon icon-skull"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{ Number(euroStats[0].deaths.total).toLocaleString() }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Deaths
+                  </p>
+                </div>
+              </div>
             </div>
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-md-3">North America</h5>
+              <h5 class="text-muted text-uppercase mt-3 mt-md-3">North America</h5>
               <div
                 class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -235,9 +269,26 @@
                   </p>
                 </div>
               </div>
+              <div
+                class="stat-card euro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
+              >
+                <div class="floating-icon icomoon icon-skull"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{
+                      Number(
+                        northAmericaStats[0].deaths.total
+                      ).toLocaleString()
+                    }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Deaths
+                  </p>
+                </div>
+              </div>
             </div>
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-md-3">South America</h5>
+              <h5 class="text-muted text-uppercase mt-3 mt-md-3">South America</h5>
               <div
                 class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -303,10 +354,27 @@
                   </p>
                 </div>
               </div>
+              <div
+                class="stat-card euro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
+              >
+                <div class="floating-icon icomoon icon-skull"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{
+                      Number(
+                        southAmericaStats[0].deaths.total
+                      ).toLocaleString()
+                    }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Deaths
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-md-3">Africa</h5>
+              <h5 class="text-muted text-uppercase mt-3 mt-md-3">Africa</h5>
               <div
                 class="stat-card afro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3"
               >
@@ -365,6 +433,21 @@
                   </p>
                 </div>
               </div>
+              <div
+                class="stat-card afro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
+              >
+                <div class="floating-icon icomoon icon-skull"></div>
+                <div class="row align-items-center">
+                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
+                    {{
+                      Number(africaStats[0].deaths.total).toLocaleString()
+                    }}
+                  </h2>
+                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">
+                    Deaths
+                  </p>
+                </div>
+              </div>
             </div>
             <div class="col-lg-6 order-lg-1 mt-3 mt-lg-0">
               <div class="custom-info left">
@@ -393,7 +476,7 @@
                             }}</span
                           >
                         </div>
-                        <div class="col-12 col-lg-6 mt-1 mt-md-0">
+                        <div class="col-12 col-lg-6 mt-1 mt-md-1 mt-lg-0">
                           <span
                             class="badge badge-pill badge-dark d-flex align-items-center"
                             ><span class="icomoon icon-skull"></span>
@@ -494,7 +577,7 @@
                   Number(focusedCountryStats[0].cases.total).toLocaleString()
                 }}
                 </span></div>
-              <div class="col-6">
+              <div class="col-6 mt-0 ">
               <span
                 class="badge badge-pill badge-dark d-flex align-items-center"
                 ><span class="icomoon icon-skull"></span>

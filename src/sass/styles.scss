@@ -36,6 +36,26 @@
       color: rgba(scale-color(#58889c, $lightness: 80%), 0.8);
     }
   }
+  &.black {
+    background-image: linear-gradient(45deg, #262626 10%, #212121 90%);
+    color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    &.asian {
+      background-image: linear-gradient(
+        45deg,
+        #262626 10%,
+        #212121 90%
+      );
+      color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    }
+    &.euro {
+      background-image: linear-gradient(45deg, #262626 10%, #212121 90%);
+      color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    }
+    &.afro {
+      background-image: linear-gradient(45deg, #262626 10%, #212121 90%);
+      color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    }
+  }
   &.yellow {
     background-image: linear-gradient(45deg, #ffdc40 10%, #ff8558 90%);
     color: rgba(scale-color(#ffdc40, $lightness: 80%), 0.8);
