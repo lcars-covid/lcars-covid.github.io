@@ -23,8 +23,8 @@
         <div class="col-12">
           <div class="d-flex align-items-center">
             <b-dropdown
-              id="dropdown-1"
-              :text="namedCountry.toUpperCase()+' '+' (change)'"
+              id="change-country"
+              :text="namedCountry.toUpperCase()"
               variant="muted"
               class="btn-muted text-muted text-uppercase mt-lg-3 d-flex align-items-center"
             >

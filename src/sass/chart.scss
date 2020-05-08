@@ -69,6 +69,10 @@
   }
 }
 
+.donut-chart {
+    height:rem(200);
+  }
+
 .fill-up-enter-active,
 .fill-up-leave-active {
   &.donut-segment {
