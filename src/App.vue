@@ -24,7 +24,7 @@
           <div class="d-flex align-items-center">
             <b-dropdown
               id="dropdown-1"
-              :text="namedCountry.toUpperCase()"
+              :text="namedCountry.toUpperCase()+' '+' (change)'"
               variant="muted"
               class="btn-muted text-muted text-uppercase mt-lg-3 d-flex align-items-center"
             >
@@ -42,8 +42,8 @@
                 :key="result._id"
                 v-if="
                   result.country != 'Africa' &&
-                    result.country != 'All' &&
                     result.country != 'Asia' &&
+                    result.country != 'All' &&
                     result.country != 'Europe' &&
                     result.country != 'North-America' &&
                     result.country != 'South-America' &&
@@ -51,12 +51,12 @@
                 "
                 v-index="result.country"
                 @click="getStats(result.country)"
-              ><span v-if="result.country != 'All'">{{ result.country }}</span><span v-if="result.country == 'All'">World</span></b-dropdown-item>
+                >{{ result.country }}
+              </b-dropdown-item>
             </b-dropdown>
-            <div class="mt-lg-3 change-text">Change</div>
           </div>
         </div>
-        <div class="col-md-3 col-6" style="height:200px;">
+        <div class="col-md-3 col-6 donut-chart">
           <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
             <circle
               class="donut-ring"
@@ -68,41 +68,44 @@
               stroke-width="3"
               opacity=".3"
             />
-            <circle
-              class="donut-segment"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              stroke="#ce4b99"
-              stroke-width="3"
-              :stroke-dasharray="[
-                (focusedCountryStats[0].deaths.total /
-                  focusedCountryStats[0].cases.total) *
-                  100,
-                100 -
+            <transition name="fill-up" mode="out-in">
+              <circle
+                class="donut-segment"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="transparent"
+                stroke="#ce4b99"
+                stroke-width="3"
+                :key="focusedCountryStats[0].country"
+                :stroke-dasharray="[
                   (focusedCountryStats[0].deaths.total /
                     focusedCountryStats[0].cases.total) *
                     100,
-              ]"
-              stroke-dashoffset="25"
-              stroke-linecap="round"
-            />
+                  100 -
+                    (focusedCountryStats[0].deaths.total /
+                      focusedCountryStats[0].cases.total) *
+                      100,
+                ]"
+                stroke-dashoffset="25"
+                stroke-linecap="round"
+              />
+            </transition>
             <g class="chart-text">
               <text x="50%" y="50%" class="chart-number">
                 {{
-                Number(
-                (focusedCountryStats[0].deaths.total /
-                focusedCountryStats[0].cases.total) *
-                100
-                ).toFixed(1)
+                  Number(
+                    (focusedCountryStats[0].deaths.total /
+                      focusedCountryStats[0].cases.total) *
+                      100
+                  ).toFixed(1)
                 }}%
               </text>
               <text x="50%" y="50%" class="chart-label">Deaths</text>
             </g>
           </svg>
         </div>
-        <div class="col-md-3 col-6" style="height:200px;">
+        <div class="col-md-3 col-6 donut-chart">
           <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
             <circle
               class="donut-ring"
@@ -114,34 +117,38 @@
               stroke-width="3"
               opacity=".3"
             />
-            <circle
-              class="donut-segment"
-              cx="21"
-              cy="21"
-              r="15.91549430918954"
-              fill="transparent"
-              stroke="green"
-              stroke-width="3"
-              :stroke-dasharray="[
-                (focusedCountryStats[0].cases.recovered /
-                  focusedCountryStats[0].cases.total) *
-                  100,
-                100 -
+            <transition name="fill-up" mode="out-in">
+              <circle
+                class="donut-segment"
+                cx="21"
+                cy="21"
+                r="15.91549430918954"
+                fill="transparent"
+                stroke="green"
+                stroke-width="3"
+                :key="focusedCountryStats[0].country"
+                :stroke-dasharray="[
                   (focusedCountryStats[0].cases.recovered /
                     focusedCountryStats[0].cases.total) *
                     100,
-              ]"
-              stroke-dashoffset="25"
-              stroke-linecap="round"
-            />
+                  100 -
+                    (focusedCountryStats[0].cases.recovered /
+                      focusedCountryStats[0].cases.total) *
+                      100,
+                ]"
+                stroke-dashoffset="25"
+                stroke-linecap="round"
+              />
+            </transition>
+
             <g class="chart-text">
               <text x="50%" y="50%" class="chart-number">
                 {{
-                Number(
-                (focusedCountryStats[0].cases.recovered /
-                focusedCountryStats[0].cases.total) *
-                100
-                ).toFixed(1)
+                  Number(
+                    (focusedCountryStats[0].cases.recovered /
+                      focusedCountryStats[0].cases.total) *
+                      100
+                  ).toFixed(1)
                 }}%
               </text>
               <text x="50%" y="50%" class="chart-label">Recovered</text>
@@ -160,6 +167,7 @@
           ></charts>
         </div>
       </div>
+
       <charts
         :graphValues="graphValues"
         :graphValues2="graphValues2"
@@ -183,25 +191,31 @@
           </span>
         </div>
         <div class="col-6 mt-1">
-          <span class="badge badge-pill badge-warning d-flex align-items-center">
+          <span
+            class="badge badge-pill badge-warning d-flex align-items-center"
+          >
             <span class="icomoon icon-person_add"></span>
             +
             {{ Number(focusedCountryStats[0].cases.new).toLocaleString() }}
           </span>
         </div>
         <div class="col-6 mt-1">
-          <span class="badge badge-pill badge-success d-flex align-items-center">
+          <span
+            class="badge badge-pill badge-success d-flex align-items-center"
+          >
             <span class="icomoon icon-man1"></span>
             {{
-            Number(focusedCountryStats[0].cases.recovered).toLocaleString()
+              Number(focusedCountryStats[0].cases.recovered).toLocaleString()
             }}
           </span>
         </div>
         <!-- {{focusedCountryStats[0].day}} -->
       </div>
 
-      <div class="row">
-        <h2 class="col-12 text-default text-uppercase d-flex align-items-center mt-3">
+      <div class="row worldwide-stats">
+        <h2
+          class="col-12 text-default text-uppercase d-flex align-items-center mt-3"
+        >
           WORLDWIDE STATS
           <span class="label label-warning ml-3">
             <span class="icomoon icon-person_add"></span>
@@ -272,10 +286,22 @@
         <div class="col-lg-6 col-md-6">
           <h4 class="text-default text-uppercase mt-3">Regional STATS</h4>
           <div class="row">
-            <regionStats :regionStatsData="asiaStats[0]" regionName="Asia"></regionStats>
-            <regionStats :regionStatsData="euroStats[0]" regionName="Europe"></regionStats>
-            <regionStats :regionStatsData="northAmericaStats[0]" regionName="North America"></regionStats>
-            <regionStats :regionStatsData="southAmericaStats[0]" regionName="South America"></regionStats>
+            <regionStats
+              :regionStatsData="asiaStats[0]"
+              regionName="Asia"
+            ></regionStats>
+            <regionStats
+              :regionStatsData="euroStats[0]"
+              regionName="Europe"
+            ></regionStats>
+            <regionStats
+              :regionStatsData="northAmericaStats[0]"
+              regionName="North America"
+            ></regionStats>
+            <regionStats
+              :regionStatsData="southAmericaStats[0]"
+              regionName="South America"
+            ></regionStats>
             <regionStats
               customClass="offset-lg-6"
               :regionStatsData="africaStats[0]"
@@ -308,14 +334,14 @@ export default {
       graphLabel: [],
       getCountryStats: "",
       namedCountry: "",
-      focusedCountryName: ""
+      focusedCountryName: "",
     };
   },
   components: {
     charts,
     regionStats,
     countryStats,
-    AnimatedNumber
+    AnimatedNumber,
   },
   mounted() {
     this.getData();
@@ -323,14 +349,14 @@ export default {
   },
   computed: {
     filteredItems() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return (
           item.country.toLowerCase().indexOf(this.search.toLowerCase()) > -1
         );
       });
     },
     noContinents() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return (
           item.country !== "North-America" &&
           item.country !== "Asia" &&
@@ -341,44 +367,44 @@ export default {
       });
     },
     asiaStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("asia") > -1;
       });
     },
     northAmericaStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("north-america") > -1;
       });
     },
     southAmericaStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("south-america") > -1;
       });
     },
     africaStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("africa") > -1;
       });
     },
     euroStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("europe") > -1;
       });
     },
     worldStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return item.country.toLowerCase().indexOf("all") > -1;
       });
     },
     focusedCountryStats() {
-      return this.results.filter(item => {
+      return this.results.filter((item) => {
         return (
           item.country
             .toLowerCase()
             .indexOf(this.focusedCountryName.toLowerCase()) > -1
         );
       });
-    }
+    },
   },
   methods: {
     formatToLocal(value) {
@@ -390,11 +416,12 @@ export default {
         method: "GET",
         headers: {
           "x-rapidapi-host": "covid-193.p.rapidapi.com",
-          "x-rapidapi-key": "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c"
-        }
+          "x-rapidapi-key":
+            "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c",
+        },
       })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           data.response.sort((a, b) => (a.country > b.country ? 1 : -1));
           this.results = data.response;
         });
@@ -403,7 +430,7 @@ export default {
       var fetchURL = "";
       if (country.length == 0) {
         fetchURL = "https://coronavirus-map.p.rapidapi.com/v1/spots/summary";
-        this.namedCountry = "World";
+        this.namedCountry = "Afghanistan";
       } else {
         this.focusedCountryName = country;
         fetchURL =
@@ -415,11 +442,12 @@ export default {
         method: "GET",
         headers: {
           "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
-          "x-rapidapi-key": "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c"
-        }
+          "x-rapidapi-key":
+            "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c",
+        },
       })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           var graphLabel = [];
           var graphValues = [];
           var graphValues2 = [];
@@ -450,8 +478,8 @@ export default {
           this.graphValues2.push(valueToPush3);
           this.graphValues3.push(valueToPush4);
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -487,11 +515,20 @@ a.btn.btn-primary.color-white {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  font-size: rem(32);
+  font-size: rem(64);
 }
 .regional-stats {
   .icomoon {
-    opacity: 0.3;
+    opacity: 0.15;
+    top: auto;
+    bottom: rem(-20);
+  }
+}
+.worldwide-stats {
+  .icomoon {
+    opacity: 0.15;
+    top: auto;
+    bottom: rem(-20);
   }
 }
 
@@ -537,5 +574,15 @@ a.btn.btn-primary.color-white {
   color: rgba(#5d78e9, 0.8);
   text-transform: uppercase;
   font-size: rem(12);
+}
+%no-outline {
+    outline-color: transparent;
+    box-shadow: none !important;
+}
+.dropdown-toggle {
+      @extend %no-outline;
+  &:focus {
+      @extend %no-outline;
+  }
 }
 </style>

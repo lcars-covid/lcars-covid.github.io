@@ -15,7 +15,7 @@
           </span>
         </h5>
     <div class="stat-card asian blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
-      <div class="floating-icon icomoon icon-sphere"></div>
+      <div class="floating-icon icomoon icon-people_alt"></div>
       <div class="row align-items-center">
         <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
           <animated-number

@@ -118,13 +118,12 @@ body {
   max-height: rem(200);
   overflow: scroll;
   overflow-x: hidden;
-  background-color:rgba(#ffffff,.5);
+  background-color:rgba(#ffffff,.87);
   border:0;
   .dropdown-item {
-    color:rgba(#ffffff,.95);
-    text-shadow:0 0 rem(1) rgba(#000000,.8),0 0 rem(3) rgba(#000000,.3);
+    color:rgba(#000000,.87);
     &:hover {
-      background-color:rgba(#ffffff,.3);
+      background-color:rgba(#000000,.3);
     }
   }
 
@@ -170,4 +169,8 @@ body {
   &:hover {
     color: rgba(#ffffff,.6);
   }
+}
+
+.donut-chart {
+  height:rem(200);
 }

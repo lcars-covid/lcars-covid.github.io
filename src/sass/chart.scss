@@ -1,66 +1,84 @@
 %labels {
-    g {
-        text {
-            display: none;
-            font-size: rem(8);
-        }
-
-        &:nth-child(4n+1) {
-            text {
-                display: block;
-                transform: rotate(70deg), translateY(20px) !important;
-            }
-        }
+  g {
+    text {
+      display: none;
+      font-size: rem(8);
     }
+
+    &:nth-child(4n + 1) {
+      text {
+        display: block;
+        transform: rotate(70deg), translateY(20px) !important;
+      }
+    }
+  }
 }
 
 .chart-box {
-    border-radius: rem(8);
-    overflow: hidden;
-    background-image: radial-gradient(circle at 50% 100%, rgba(white, .05) 0%, rgba(white, .0) 70%);
-    background-size: 125%;
+  border-radius: rem(8);
+  overflow: hidden;
+  background-image: radial-gradient(
+    circle at 50% 100%,
+    rgba(white, 0.05) 0%,
+    rgba(white, 0) 70%
+  );
+  background-size: 125%;
 
-    svg {
-        background: transparent !important;
+  svg {
+    background: transparent !important;
 
-        .grid-fullblock {
-            @extend %labels;
+    .grid-fullblock {
+      @extend %labels;
 
-            g {
-                text {
-                    transform: rotate(-70deg) translate(-26px, -10px) !important;
-                    fill:#6c798a;
-                    opacity:.5;
-                }
-            }
-        }
-
-        .grid-range {
-            @extend %labels;
-            g {
-                text {
-                    fill: #ffffff;
-                    opacity: .12;
-                }
-            }
-        }
-
-        circle {
-            ~text {
-                font-size: rem(8);
-            }
-        }
-    }
-    .widget-legend {
+      g {
         text {
-            fill:#ffffff;
-            opacity:.8;
+          transform: rotate(-70deg) translate(-26px, -10px) !important;
+          fill: #6c798a;
+          opacity: 0.5;
         }
+      }
     }
-    line {
-        &[stroke="#bfbfbf"] {
-            opacity:.075;
-            stroke: #000000;
+
+    .grid-range {
+      @extend %labels;
+      g {
+        text {
+          fill: #ffffff;
+          opacity: 0.12;
         }
+      }
     }
+
+    circle {
+      ~ text {
+        font-size: rem(8);
+      }
+    }
+  }
+  .widget-legend {
+    text {
+      fill: #ffffff;
+      opacity: 0.8;
+    }
+  }
+  line {
+    &[stroke="#bfbfbf"] {
+      opacity: 0.075;
+      stroke: #000000;
+    }
+  }
+}
+
+.fill-up-enter-active,
+.fill-up-leave-active {
+  &.donut-segment {
+    transition: all .5s ease;
+  }
+}
+.fill-up-enter,
+.fill-up-leave-to {
+  &.donut-segment {
+    stroke-dasharray:0, 100;
+
+  }
 }
