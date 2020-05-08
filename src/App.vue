@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light bright-header">
       <h1 class="navbar-light font-weight-bold" href="#">
         COVID-19
-        <span class="font-weight-light">STATS</span>
+        <span class="light-text">STATS</span>
       </h1>
-      <button
+      <!-- <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -15,542 +15,18 @@
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button>-->
     </nav>
-    <div class="container">
-      <h2 class="text-default text-uppercase mt-3">WORLDWIDE STATS</h2>
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="stat-card blue text-center pt-3 pb-3 pl-3 pr-3">
-            <div class="floating-icon icomoon icon-sphere"></div>
-            <h2>
-              <animated-number
-                :value="Number(worldStats[0].cases.total)"
-                :formatValue="formatToLocal"
-                :duration="1000"
-              />
-            </h2>
-            <p class="text-uppercase mb-0">Total Cases</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
-          <div class="stat-card yellow text-center pt-3 pb-3 pl-3 pr-3">
-            <div class="floating-icon icomoon icon-person_add"></div>
-            <h2>
-              +
-              <animated-number
-                :value="Number(worldStats[0].cases.new)"
-                :formatValue="formatToLocal"
-                :duration="1000"
-              />
-            </h2>
-            <p class="text-uppercase mb-0">New Cases</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
-          <div class="stat-card red text-center pt-3 pb-3 pl-3 pr-3">
-            <div class="floating-icon icomoon icon-hospital-o"></div>
-            <h2>
-              <animated-number
-                :value="Number(worldStats[0].cases.active)"
-                :formatValue="formatToLocal"
-                :duration="1000"
-              />
-            </h2>
-            <p class="text-uppercase mb-0">Active</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
-          <div class="stat-card green text-center pt-3 pb-3 pl-3 pr-3">
-            <div class="floating-icon icomoon icon-man1"></div>
-            <h2>
-              <animated-number
-                :value="Number(worldStats[0].cases.recovered)"
-                :formatValue="formatToLocal"
-                :duration="1000"
-              />
-            </h2>
-            <p class="text-uppercase mb-0">Recovered</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 mt-1 mt-lg-3">
-          <div class="stat-card black text-center pt-3 pb-3 pl-3 pr-3">
-            <div class="floating-icon icomoon icon-skull"></div>
-            <h2>
-              <animated-number
-                :value="Number(worldStats[0].deaths.total)"
-                :formatValue="formatToLocal"
-                :duration="1000"
-              />
-            </h2>
-            <p class="text-uppercase mb-0">Deaths</p>
-          </div>
-        </div>
-      </div>
-      <div class="row regional-stats">
-        <div class="col-lg-6 col-md-6">
-          <h4 class="text-default text-uppercase mt-3">Regional STATS</h4>
-          <div class="row">
-            <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase">Asia</h5>
-              <div class="stat-card asian blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
-                <div class="floating-icon icomoon icon-sphere"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(asiaStats[0].cases.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Total Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card asian yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-person_add"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    +
-                    <animated-number
-                      :value="Number(asiaStats[0].cases.new)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">New Cases</p>
-                </div>
-              </div>
-              <div class="stat-card asian red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0">
-                <div class="floating-icon icomoon icon-hospital-o"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(asiaStats[0].cases.active)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Active Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card asian green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-man1"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(asiaStats[0].cases.recovered)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Recovered</p>
-                </div>
-              </div>
-              <div
-                class="stat-card asian black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-skull"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(asiaStats[0].deaths.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Deaths</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-3 mt-md-0">Europe</h5>
-              <div class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
-                <div class="floating-icon icomoon icon-sphere"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(euroStats[0].cases.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Total Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-person_add"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    +
-                    <animated-number
-                      :value="Number(euroStats[0].cases.new)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">New Cases</p>
-                </div>
-              </div>
-              <div class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0">
-                <div class="floating-icon icomoon icon-hospital-o"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(euroStats[0].cases.active)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Active Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-man1"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(euroStats[0].cases.recovered)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Recovered</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-skull"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(euroStats[0].deaths.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Deaths</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-3 mt-md-3">North America</h5>
-              <div class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
-                <div class="floating-icon icomoon icon-sphere"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(northAmericaStats[0].cases.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Total Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-person_add"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    +
-                    <animated-number
-                      :value="Number(northAmericaStats[0].cases.new)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">New Cases</p>
-                </div>
-              </div>
-              <div class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0">
-                <div class="floating-icon icomoon icon-hospital-o"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(northAmericaStats[0].cases.active)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Active Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-man1"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(northAmericaStats[0].cases.recovered)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Recovered</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-skull"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(northAmericaStats[0].deaths.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Deaths</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-3 mt-md-3">South America</h5>
-              <div class="stat-card euro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
-                <div class="floating-icon icomoon icon-sphere"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(southAmericaStats[0].cases.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Total Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-person_add"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    +
-                    <animated-number
-                      :value="Number(southAmericaStats[0].cases.new)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">New Cases</p>
-                </div>
-              </div>
-              <div class="stat-card euro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0">
-                <div class="floating-icon icomoon icon-hospital-o"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(southAmericaStats[0].cases.active)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Active Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-man1"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(southAmericaStats[0].cases.recovered)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Recovered</p>
-                </div>
-              </div>
-              <div
-                class="stat-card euro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-skull"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(southAmericaStats[0].deaths.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Deaths</p>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-lg-6">
-              <h5 class="text-muted text-uppercase mt-3 mt-md-3">Africa</h5>
-              <div class="stat-card afro blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
-                <div class="floating-icon icomoon icon-sphere"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(africaStats[0].cases.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Total Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card afro yellow text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-person_add"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    +
-                    <animated-number
-                      :value="Number(africaStats[0].cases.new)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">New Cases</p>
-                </div>
-              </div>
-              <div class="stat-card afro red text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0">
-                <div class="floating-icon icomoon icon-hospital-o"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(africaStats[0].cases.active)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Active Cases</p>
-                </div>
-              </div>
-              <div
-                class="stat-card afro green text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-man1"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(africaStats[0].cases.recovered)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Recovered</p>
-                </div>
-              </div>
-              <div
-                class="stat-card afro black text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3 mt-1 mt-lg-0"
-              >
-                <div class="floating-icon icomoon icon-skull"></div>
-                <div class="row align-items-center">
-                  <h2 class="col-sm h4 pl-lg-4 text-lg-right text-center">
-                    <animated-number
-                      :value="Number(africaStats[0].deaths.total)"
-                      :formatValue="formatToLocal"
-                      :duration="1000"
-                    />
-                  </h2>
-                  <p class="h8 col-sm text-uppercase mb-0 text-lg-right">Deaths</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 order-lg-1 mt-3 mt-lg-0">
-              <div class="custom-info left">
-                <paginate name="countries" :list="noContinents" :per="3" class="pl-0">
-                  <div
-                    v-for="noContinents in paginated('countries')"
-                    class="card mb-2"
-                    :key="noContinents.country"
-                  >
-                    <div class="card-header bg-info text-uppercase">{{ noContinents.country }}</div>
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-12 col-lg-6">
-                          <span class="badge badge-pill badge-info d-flex align-items-center">
-                            <span class="icomoon icon-sphere"></span>
-                            {{
-                            Number(noContinents.cases.total).toLocaleString()
-                            }}
-                          </span>
-                        </div>
-                        <div class="col-12 col-lg-6 mt-1 mt-md-1 mt-lg-0">
-                          <span class="badge badge-pill badge-dark d-flex align-items-center">
-                            <span class="icomoon icon-skull"></span>
-                            {{
-                            Number(noContinents.deaths.total).toLocaleString()
-                            }}
-                          </span>
-                        </div>
-                        <div class="col-12 col-lg-6 mt-1">
-                          <span class="badge badge-pill badge-warning d-flex align-items-center">
-                            <span class="icomoon icon-person_add"></span>
-                            +{{
-                            Number(noContinents.cases.new).toLocaleString()
-                            }}
-                          </span>
-                        </div>
-                        <div class="col-12 col-lg-6 mt-1">
-                          <span class="badge badge-pill badge-success d-flex align-items-center">
-                            <span class="icomoon icon-man1"></span>
-                            {{
-                            Number(
-                            noContinents.cases.recovered
-                            ).toLocaleString()
-                            }}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </paginate>
-                <paginate-links
-                  for="countries"
-                  :simple="{
-                    prev: 'Back',
-                    next: 'Next',
-                  }"
-                  :classes="{
-                    ul: ['row', 'list-unstyled'],
-                    '.next': ['col-6', 'text-right'],
-                    '.prev': ['col-6', 'text-left'],
-                    '.next > a': [
-                      'btn',
-                      'btn-primary',
-                      'color-white',
-                      'text-uppercase',
-                    ],
-                    '.prev > a': [
-                      'btn',
-                      'btn-primary',
-                      'color-white',
-                      'text-uppercase',
-                    ],
-                  }"
-                ></paginate-links>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 pt-lg-4">
-          <div class="custom-info right">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex align-items-center">
             <b-dropdown
               id="dropdown-1"
               :text="namedCountry.toUpperCase()"
               variant="muted"
-              class="btn-muted text-muted text-uppercase mt-lg-3 d-block"
+              class="btn-muted text-muted text-uppercase mt-lg-3 d-flex align-items-center"
             >
               <div class="pl-3 pr-3">
                 <input
@@ -560,6 +36,7 @@
                   class="form-control mt-0 mt-md-2 mb-0 mb-md-2"
                 />
               </div>
+
               <b-dropdown-item
                 v-for="result in filteredItems"
                 :key="result._id"
@@ -574,125 +51,240 @@
                 "
                 v-index="result.country"
                 @click="getStats(result.country)"
-              >{{ result.country }}</b-dropdown-item>
+              ><span v-if="result.country != 'All'">{{ result.country }}</span><span v-if="result.country == 'All'">World</span></b-dropdown-item>
             </b-dropdown>
-            <div v-if="focusedCountryStats.length < 2" class="row mb-3">
-              <div class="col-6">
-                <span class="badge badge-pill badge-info d-flex align-items-center">
-                  <span class="icomoon icon-sphere"></span>
-                  {{
-                  Number(focusedCountryStats[0].cases.total).toLocaleString()
-                  }}
-                </span>
-              </div>
-              <div class="col-6 mt-0">
-                <span class="badge badge-pill badge-dark d-flex align-items-center">
-                  <span class="icomoon icon-skull"></span>
-                  {{
-                  Number(focusedCountryStats[0].deaths.total).toLocaleString()
-                  }}
-                </span>
-              </div>
-              <div class="col-6 mt-1">
-                <span class="badge badge-pill badge-warning d-flex align-items-center">
-                  <span class="icomoon icon-person_add"></span>
-                  +
-                  {{
-                  Number(focusedCountryStats[0].cases.new).toLocaleString()
-                  }}
-                </span>
-              </div>
-              <div class="col-6 mt-1">
-                <span class="badge badge-pill badge-success d-flex align-items-center">
-                  <span class="icomoon icon-man1"></span>
-                  {{
-                  Number(
-                  focusedCountryStats[0].cases.recovered
-                  ).toLocaleString()
-                  }}
-                </span>
-              </div>
-              <!-- {{focusedCountryStats[0].day}} -->
-            </div>
-            <div class="chart-box mb-3">
-              <graph-area
-                :renderInterval="1000"
-                :colors="['#90A7ED', '#67CBFF']"
-                :theme="'classic'"
-                :height="200"
-                :axis-full-mode="true"
-                :shape="'normal'"
-                :opacity="0.7"
-                :borderLine="false"
-                :textRotateX="70"
-                :axisXStyle="'none'"
-                :axisYStyle="'none'"
-                :axisStep="100"
-                :axisXPosition="'bottom'"
-                :paddingTop="30"
-                :paddingBottom="70"
-                :paddingLeft="60"
-                :paddingRight="20"
-                :labels="graphLabel"
-                :values="graphValues"
-              >
-                <legends :names="['MORTALITY RATIO', 'RECOVERY RATIO']"></legends>
-                <guideline :tooltip-y="true"></guideline>
-              </graph-area>
-            </div>
-            <div class="chart-box mb-3">
-              <graph-area
-                :renderInterval="1000"
-                :colors="['orange']"
-                :theme="'classic'"
-                :height="200"
-                :axis-full-mode="true"
-                :shape="'normal'"
-                :opacity="0.7"
-                :borderLine="false"
-                :textRotateX="70"
-                :axisXStyle="'none'"
-                :axisYStyle="'none'"
-                :axisXPosition="'bottom'"
-                :paddingTop="30"
-                :paddingBottom="70"
-                :paddingLeft="60"
-                :paddingRight="20"
-                :labels="graphLabel"
-                :values="graphValues2"
-              >
-                <legends :names="['TOTAL CASES']"></legends>
-
-                <guideline :tooltip-y="true"></guideline>
-              </graph-area>
-            </div>
-            <div class="chart-box mb-3">
-              <graph-area
-                :renderInterval="1000"
-                :colors="['black', 'orange']"
-                :theme="'classic'"
-                :height="200"
-                :axis-full-mode="true"
-                :shape="'normal'"
-                :opacity="0.7"
-                :borderLine="false"
-                :textRotateX="70"
-                :axisXStyle="'none'"
-                :axisYStyle="'none'"
-                :axisXPosition="'bottom'"
-                :paddingTop="30"
-                :paddingBottom="70"
-                :paddingLeft="60"
-                :paddingRight="20"
-                :labels="graphLabel"
-                :values="graphValues3"
-              >
-                <legends :names="['TOTAL DEATH']"></legends>
-
-                <guideline :tooltip-y="true"></guideline>
-              </graph-area>
-            </div>
+            <div class="mt-lg-3 change-text">Change</div>
           </div>
+        </div>
+        <div class="col-md-3 col-6" style="height:200px;">
+          <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+            <circle
+              class="donut-ring"
+              cx="21"
+              cy="21"
+              r="15.91549430918954"
+              fill="transparent"
+              stroke="#000000"
+              stroke-width="3"
+              opacity=".3"
+            />
+            <circle
+              class="donut-segment"
+              cx="21"
+              cy="21"
+              r="15.91549430918954"
+              fill="transparent"
+              stroke="#ce4b99"
+              stroke-width="3"
+              :stroke-dasharray="[
+                (focusedCountryStats[0].deaths.total /
+                  focusedCountryStats[0].cases.total) *
+                  100,
+                100 -
+                  (focusedCountryStats[0].deaths.total /
+                    focusedCountryStats[0].cases.total) *
+                    100,
+              ]"
+              stroke-dashoffset="25"
+              stroke-linecap="round"
+            />
+            <g class="chart-text">
+              <text x="50%" y="50%" class="chart-number">
+                {{
+                Number(
+                (focusedCountryStats[0].deaths.total /
+                focusedCountryStats[0].cases.total) *
+                100
+                ).toFixed(1)
+                }}%
+              </text>
+              <text x="50%" y="50%" class="chart-label">Deaths</text>
+            </g>
+          </svg>
+        </div>
+        <div class="col-md-3 col-6" style="height:200px;">
+          <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+            <circle
+              class="donut-ring"
+              cx="21"
+              cy="21"
+              r="15.91549430918954"
+              fill="transparent"
+              stroke="#000000"
+              stroke-width="3"
+              opacity=".3"
+            />
+            <circle
+              class="donut-segment"
+              cx="21"
+              cy="21"
+              r="15.91549430918954"
+              fill="transparent"
+              stroke="green"
+              stroke-width="3"
+              :stroke-dasharray="[
+                (focusedCountryStats[0].cases.recovered /
+                  focusedCountryStats[0].cases.total) *
+                  100,
+                100 -
+                  (focusedCountryStats[0].cases.recovered /
+                    focusedCountryStats[0].cases.total) *
+                    100,
+              ]"
+              stroke-dashoffset="25"
+              stroke-linecap="round"
+            />
+            <g class="chart-text">
+              <text x="50%" y="50%" class="chart-number">
+                {{
+                Number(
+                (focusedCountryStats[0].cases.recovered /
+                focusedCountryStats[0].cases.total) *
+                100
+                ).toFixed(1)
+                }}%
+              </text>
+              <text x="50%" y="50%" class="chart-label">Recovered</text>
+            </g>
+          </svg>
+        </div>
+        <div class="col-md-6">
+          <charts
+            :graphValues="graphValues"
+            :graphValues2="graphValues2"
+            :graphValues3="graphValues3"
+            :graphLabel="graphLabel"
+            deathRecoverRatio="true"
+            totalCases="false"
+            deathCases="false"
+          ></charts>
+        </div>
+      </div>
+      <charts
+        :graphValues="graphValues"
+        :graphValues2="graphValues2"
+        :graphValues3="graphValues3"
+        :graphLabel="graphLabel"
+        deathRecoverRatio="false"
+        totalCases="true"
+        deathCases="true"
+      ></charts>
+      <div v-if="focusedCountryStats.length < 2" class="row mb-3">
+        <div class="col-6">
+          <span class="badge badge-pill badge-info d-flex align-items-center">
+            <span class="icomoon icon-sphere"></span>
+            {{ Number(focusedCountryStats[0].cases.total).toLocaleString() }}
+          </span>
+        </div>
+        <div class="col-6 mt-0">
+          <span class="badge badge-pill badge-dark d-flex align-items-center">
+            <span class="icomoon icon-skull"></span>
+            {{ Number(focusedCountryStats[0].deaths.total).toLocaleString() }}
+          </span>
+        </div>
+        <div class="col-6 mt-1">
+          <span class="badge badge-pill badge-warning d-flex align-items-center">
+            <span class="icomoon icon-person_add"></span>
+            +
+            {{ Number(focusedCountryStats[0].cases.new).toLocaleString() }}
+          </span>
+        </div>
+        <div class="col-6 mt-1">
+          <span class="badge badge-pill badge-success d-flex align-items-center">
+            <span class="icomoon icon-man1"></span>
+            {{
+            Number(focusedCountryStats[0].cases.recovered).toLocaleString()
+            }}
+          </span>
+        </div>
+        <!-- {{focusedCountryStats[0].day}} -->
+      </div>
+
+      <div class="row">
+        <h2 class="col-12 text-default text-uppercase d-flex align-items-center mt-3">
+          WORLDWIDE STATS
+          <span class="label label-warning ml-3">
+            <span class="icomoon icon-person_add"></span>
+            <span class="strong-text">
+              <animated-number
+                :value="Number(worldStats[0].cases.new).toFixed(0)"
+                :formatValue="formatToLocal"
+                :duration="2000"
+              />
+            </span>
+            <span class="light-text">NEW CASES</span>
+          </span>
+        </h2>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card blue text-center pt-3 pb-3 pl-3 pr-3">
+            <div class="floating-icon icomoon icon-sphere"></div>
+            <h2>
+              <animated-number
+                :value="Number(worldStats[0].cases.total).toFixed(0)"
+                :formatValue="formatToLocal"
+                :duration="2000"
+              />
+            </h2>
+            <p class="text-uppercase mb-0">Total Cases</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-1 mt-md-0">
+          <div class="stat-card red text-center pt-3 pb-3 pl-3 pr-3">
+            <div class="floating-icon icomoon icon-hospital-o"></div>
+            <h2>
+              <animated-number
+                :value="Number(worldStats[0].cases.active).toFixed(0)"
+                :formatValue="formatToLocal"
+                :duration="2000"
+              />
+            </h2>
+            <p class="text-uppercase mb-0">Active</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
+          <div class="stat-card green text-center pt-3 pb-3 pl-3 pr-3">
+            <div class="floating-icon icomoon icon-man1"></div>
+            <h2>
+              <animated-number
+                :value="Number(worldStats[0].cases.recovered).toFixed(0)"
+                :formatValue="formatToLocal"
+                :duration="2000"
+              />
+            </h2>
+            <p class="text-uppercase mb-0">Recovered</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-1 mt-lg-0">
+          <div class="stat-card black text-center pt-3 pb-3 pl-3 pr-3">
+            <div class="floating-icon icomoon icon-skull"></div>
+            <h2>
+              <animated-number
+                :value="Number(worldStats[0].deaths.total).toFixed(0)"
+                :formatValue="formatToLocal"
+                :duration="2000"
+              />
+            </h2>
+            <p class="text-uppercase mb-0">Deaths</p>
+          </div>
+        </div>
+      </div>
+      <div class="row regional-stats">
+        <div class="col-lg-6 col-md-6">
+          <h4 class="text-default text-uppercase mt-3">Regional STATS</h4>
+          <div class="row">
+            <regionStats :regionStatsData="asiaStats[0]" regionName="Asia"></regionStats>
+            <regionStats :regionStatsData="euroStats[0]" regionName="Europe"></regionStats>
+            <regionStats :regionStatsData="northAmericaStats[0]" regionName="North America"></regionStats>
+            <regionStats :regionStatsData="southAmericaStats[0]" regionName="South America"></regionStats>
+            <regionStats
+              customClass="offset-lg-6"
+              :regionStatsData="africaStats[0]"
+              regionName="Africa"
+            ></regionStats>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <countryStats :noContinents="noContinents"></countryStats>
         </div>
       </div>
     </div>
@@ -701,6 +293,9 @@
 
 <script>
 import AnimatedNumber from "animated-number-vue";
+import charts from "./components/charts.vue";
+import regionStats from "./components/regionStats.vue";
+import countryStats from "./components/countryStats.vue";
 
 export default {
   data() {
@@ -713,11 +308,13 @@ export default {
       graphLabel: [],
       getCountryStats: "",
       namedCountry: "",
-      focusedCountryName: "",
-      paginate: ["countries"]
+      focusedCountryName: ""
     };
   },
   components: {
+    charts,
+    regionStats,
+    countryStats,
     AnimatedNumber
   },
   mounted() {
@@ -739,7 +336,6 @@ export default {
           item.country !== "Asia" &&
           item.country !== "South-America" &&
           item.country !== "Europe" &&
-          item.country !== "All" &&
           item.country !== "Africa"
         );
       });
@@ -897,5 +493,49 @@ a.btn.btn-primary.color-white {
   .icomoon {
     opacity: 0.3;
   }
+}
+
+.chart-text {
+  font: 16px/1.4em "Montserrat", Arial, sans-serif;
+  fill: #000;
+  transform: translateY(0.25em);
+}
+
+.chart-number {
+  font-size: 0.55em;
+  line-height: 1;
+  text-anchor: middle;
+  transform: translateY(-0.25em);
+  fill: #ffffff;
+}
+
+.chart-label {
+  font-size: 0.18em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  transform: translateY(0.7em);
+  fill: #ffffff;
+  opacity: 0.3;
+}
+
+.label {
+  font-size: 0.5em;
+  border-radius: 0.2em;
+  padding: 0.2em rem(8);
+  &.label-warning {
+    background-color: #ff9200;
+    color: #ffffff;
+  }
+}
+.strong-text {
+  font-weight: bold;
+}
+.light-text {
+  font-weight: lighter;
+}
+.change-text {
+  color: rgba(#5d78e9, 0.8);
+  text-transform: uppercase;
+  font-size: rem(12);
 }
 </style>

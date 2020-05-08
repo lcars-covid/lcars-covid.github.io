@@ -17,8 +17,8 @@
 .chart-box {
     border-radius: rem(8);
     overflow: hidden;
-    background-image: radial-gradient(circle at 0% 0%, rgba(white, .3) 30%, rgba(white, .8) 100%);
-    border: rem(1) solid rgba(black, .2);
+    background-image: radial-gradient(circle at 50% 100%, rgba(white, .05) 0%, rgba(white, .0) 70%);
+    background-size: 125%;
 
     svg {
         background: transparent !important;
@@ -28,19 +28,39 @@
 
             g {
                 text {
-                    transform: rotate(-70deg) translate(-26px, -10px) !important
+                    transform: rotate(-70deg) translate(-26px, -10px) !important;
+                    fill:#6c798a;
+                    opacity:.5;
                 }
             }
         }
 
         .grid-range {
             @extend %labels;
+            g {
+                text {
+                    fill: #ffffff;
+                    opacity: .12;
+                }
+            }
         }
 
         circle {
             ~text {
                 font-size: rem(8);
             }
+        }
+    }
+    .widget-legend {
+        text {
+            fill:#ffffff;
+            opacity:.8;
+        }
+    }
+    line {
+        &[stroke="#bfbfbf"] {
+            opacity:.075;
+            stroke: #000000;
         }
     }
 }

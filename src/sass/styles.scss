@@ -5,6 +5,10 @@
 @import "chart";
 @import "icons";
 
+body {
+  background:radial-gradient(circle at top left, #19283b 0 , #3a495c 75%); 
+}
+
 .bright-header {
   background-image: linear-gradient(to right, #dd185a 10%, #fe6702 90%);
 }
@@ -113,6 +117,28 @@
 .dropdown-menu {
   max-height: rem(200);
   overflow: scroll;
+  overflow-x: hidden;
+  background-color:rgba(#ffffff,.5);
+  border:0;
+  .dropdown-item {
+    color:rgba(#ffffff,.95);
+    text-shadow:0 0 rem(1) rgba(#000000,.8),0 0 rem(3) rgba(#000000,.3);
+    &:hover {
+      background-color:rgba(#ffffff,.3);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: rem(8);
+    height: rem(12);
+    background-color: rgba(#000000,.12); 
+  }
+  
+
+  &::-webkit-scrollbar-thumb {
+      background: #fff; 
+      border-radius: rem(2);
+  }
 }
 
 .custom-info {
@@ -122,7 +148,6 @@
     background: transparent;
     border-radius: 0;
     @include respond-to("lg") {
-      background: rgba(black, 0.12);
       border-radius: rem(16);
       margin-left: rem(-8);
       padding: 0 rem(16) rem(16) rem(16);
@@ -134,10 +159,15 @@
     background: transparent;
     border-radius: 0;
     @include respond-to("lg") {
-      background: rgba(black, 0.12);
       border-radius: rem(16);
       margin-right: rem(-8);
       padding: rem(16) rem(16) rem(4) rem(16);
     }
+  }
+}
+
+.btn {
+  &:hover {
+    color: rgba(#ffffff,.6);
   }
 }
