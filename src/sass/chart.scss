@@ -73,12 +73,18 @@
     height:rem(200);
   }
 
-.fill-up-enter-active,
-.fill-up-leave-active {
+.fill-up-enter-active {
   &.donut-segment {
-    transition: all .5s ease;
+    transition: all 1s ease;
   }
 }
+
+.fill-up-leave-active {
+  &.donut-segment {
+    transition: all 0s ease;
+  }
+}
+
 .fill-up-enter,
 .fill-up-leave-to {
   &.donut-segment {
