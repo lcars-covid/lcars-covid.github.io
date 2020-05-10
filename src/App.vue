@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="d-flex align-items-center">
+          <div class="d-flex align-items-center justify-content-between">
             <b-dropdown
               id="change-country"
               :text="namedCountry.toUpperCase()"
@@ -51,9 +51,9 @@
                 "
                 v-index="result.country"
                 @click="getStats(result.country)"
-                >{{ result.country }}
-              </b-dropdown-item>
+              >{{ result.country }}</b-dropdown-item>
             </b-dropdown>
+            <button class="btn btn-primary" @click="setEnvironment(namedCountry)">Set as Start Page</button>
           </div>
         </div>
         <div class="col-md-3 col-6 donut-chart">
@@ -94,11 +94,11 @@
             <g class="chart-text">
               <text x="50%" y="50%" class="chart-number">
                 {{
-                  Number(
-                    (focusedCountryStats[0].deaths.total /
-                      focusedCountryStats[0].cases.total) *
-                      100
-                  ).toFixed(1)
+                Number(
+                (focusedCountryStats[0].deaths.total /
+                focusedCountryStats[0].cases.total) *
+                100
+                ).toFixed(1)
                 }}%
               </text>
               <text x="50%" y="50%" class="chart-label">Deaths</text>
@@ -144,11 +144,11 @@
             <g class="chart-text">
               <text x="50%" y="50%" class="chart-number">
                 {{
-                  Number(
-                    (focusedCountryStats[0].cases.recovered /
-                      focusedCountryStats[0].cases.total) *
-                      100
-                  ).toFixed(1)
+                Number(
+                (focusedCountryStats[0].cases.recovered /
+                focusedCountryStats[0].cases.total) *
+                100
+                ).toFixed(1)
                 }}%
               </text>
               <text x="50%" y="50%" class="chart-label">Recovered</text>
@@ -191,21 +191,17 @@
           </span>
         </div>
         <div class="col-6 mt-1">
-          <span
-            class="badge badge-pill badge-warning d-flex align-items-center"
-          >
+          <span class="badge badge-pill badge-warning d-flex align-items-center">
             <span class="icomoon icon-person_add"></span>
             +
             {{ Number(focusedCountryStats[0].cases.new).toLocaleString() }}
           </span>
         </div>
         <div class="col-6 mt-1">
-          <span
-            class="badge badge-pill badge-success d-flex align-items-center"
-          >
+          <span class="badge badge-pill badge-success d-flex align-items-center">
             <span class="icomoon icon-man1"></span>
             {{
-              Number(focusedCountryStats[0].cases.recovered).toLocaleString()
+            Number(focusedCountryStats[0].cases.recovered).toLocaleString()
             }}
           </span>
         </div>
@@ -213,9 +209,7 @@
       </div>
 
       <div class="row worldwide-stats">
-        <h2
-          class="col-12 text-default text-uppercase d-flex align-items-center mt-3"
-        >
+        <h2 class="col-12 text-default text-uppercase d-flex align-items-center mt-3">
           WORLDWIDE STATS
           <span class="label label-warning ml-3">
             <span class="icomoon icon-person_add"></span>
@@ -286,22 +280,10 @@
         <div class="col-lg-6 col-md-6">
           <h4 class="text-default text-uppercase mt-3">Regional STATS</h4>
           <div class="row">
-            <regionStats
-              :regionStatsData="asiaStats[0]"
-              regionName="Asia"
-            ></regionStats>
-            <regionStats
-              :regionStatsData="euroStats[0]"
-              regionName="Europe"
-            ></regionStats>
-            <regionStats
-              :regionStatsData="northAmericaStats[0]"
-              regionName="North America"
-            ></regionStats>
-            <regionStats
-              :regionStatsData="southAmericaStats[0]"
-              regionName="South America"
-            ></regionStats>
+            <regionStats :regionStatsData="asiaStats[0]" regionName="Asia"></regionStats>
+            <regionStats :regionStatsData="euroStats[0]" regionName="Europe"></regionStats>
+            <regionStats :regionStatsData="northAmericaStats[0]" regionName="North America"></regionStats>
+            <regionStats :regionStatsData="southAmericaStats[0]" regionName="South America"></regionStats>
             <regionStats
               customClass="offset-lg-6"
               :regionStatsData="africaStats[0]"
@@ -334,29 +316,34 @@ export default {
       graphLabel: [],
       getCountryStats: "",
       namedCountry: "",
-      focusedCountryName: "",
+      focusedCountryName: ""
     };
   },
   components: {
     charts,
     regionStats,
     countryStats,
-    AnimatedNumber,
+    AnimatedNumber
   },
   mounted() {
     this.getData();
-    this.getStats("");
+    if ($cookies.isKey("defaultCountry")) {
+      this.getStats($cookies.get("defaultCountry"));
+    } else {
+      
+      this.getStats("");
+    }
   },
   computed: {
     filteredItems() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return (
           item.country.toLowerCase().indexOf(this.search.toLowerCase()) > -1
         );
       });
     },
     noContinents() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return (
           item.country !== "North-America" &&
           item.country !== "Asia" &&
@@ -367,44 +354,44 @@ export default {
       });
     },
     asiaStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return item.country.toLowerCase().indexOf("asia") > -1;
       });
     },
     northAmericaStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return item.country.toLowerCase().indexOf("north-america") > -1;
       });
     },
     southAmericaStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return item.country.toLowerCase().indexOf("south-america") > -1;
       });
     },
     africaStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return item.country.toLowerCase().indexOf("africa") > -1;
       });
     },
     euroStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return item.country.toLowerCase().indexOf("europe") > -1;
       });
     },
     worldStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return item.country.toLowerCase().indexOf("all") > -1;
       });
     },
     focusedCountryStats() {
-      return this.results.filter((item) => {
+      return this.results.filter(item => {
         return (
           item.country
             .toLowerCase()
             .indexOf(this.focusedCountryName.toLowerCase()) > -1
         );
       });
-    },
+    }
   },
   methods: {
     formatToLocal(value) {
@@ -416,15 +403,18 @@ export default {
         method: "GET",
         headers: {
           "x-rapidapi-host": "covid-193.p.rapidapi.com",
-          "x-rapidapi-key":
-            "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c",
-        },
+          "x-rapidapi-key": "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c"
+        }
       })
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response => response.json())
+        .then(data => {
           data.response.sort((a, b) => (a.country > b.country ? 1 : -1));
           this.results = data.response;
         });
+    },
+    setEnvironment(setDefaultCountry) {
+      this.$cookies.set("defaultCountry", setDefaultCountry);
+      alert(setDefaultCountry+" set as the default country. This will show "+setDefaultCountry+" statistics first when you visit the page again.");
     },
     getStats(country) {
       var fetchURL = "";
@@ -442,12 +432,11 @@ export default {
         method: "GET",
         headers: {
           "x-rapidapi-host": "coronavirus-map.p.rapidapi.com",
-          "x-rapidapi-key":
-            "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c",
-        },
+          "x-rapidapi-key": "d9822f5bcbmsh198dadc54bf35b0p159988jsnd34bf1ce4b3c"
+        }
       })
-        .then((response) => response.json())
-        .then((data) => {
+        .then(response => response.json())
+        .then(data => {
           var graphLabel = [];
           var graphValues = [];
           var graphValues2 = [];
@@ -478,8 +467,8 @@ export default {
           this.graphValues2.push(valueToPush3);
           this.graphValues3.push(valueToPush4);
         });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -576,13 +565,13 @@ a.btn.btn-primary.color-white {
   font-size: rem(12);
 }
 %no-outline {
-    outline-color: transparent;
-    box-shadow: none !important;
+  outline-color: transparent;
+  box-shadow: none !important;
 }
 .dropdown-toggle {
-      @extend %no-outline;
+  @extend %no-outline;
   &:focus {
-      @extend %no-outline;
+    @extend %no-outline;
   }
 }
 </style>
