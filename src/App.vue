@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light bright-header">
       <h1 class="navbar-light font-weight-bold" href="#">
-        COVID-19{{debugChar}}
+        COVID-19
         <span class="light-text">STATS</span>
       </h1>
       <!-- <button
@@ -53,7 +53,7 @@
                 @click="getStats(result.country)"
               >{{ result.country }}</b-dropdown-item>
             </b-dropdown>
-            <button class="btn btn-primary" @click="setEnvironment(namedCountry)">Set as Start Page</button>
+            <button class="btn btn-primary" @click="setEnvironment(namedCountry)" style="opacity:0">Set as Start Page</button>
           </div>
         </div>
         <div class="col-md-3 col-6 donut-chart">
