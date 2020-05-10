@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light bright-header">
       <h1 class="navbar-light font-weight-bold" href="#">
-        COVID-19
+        COVID-19{{debugChar}}
         <span class="light-text">STATS</span>
       </h1>
       <!-- <button
@@ -316,7 +316,8 @@ export default {
       graphLabel: [],
       getCountryStats: "",
       namedCountry: "",
-      focusedCountryName: ""
+      focusedCountryName: "",
+      debugChar: "|"
     };
   },
   components: {
@@ -329,6 +330,7 @@ export default {
     this.getData();
     if ($cookies.isKey("defaultCountry")) {
       this.getStats($cookies.get("defaultCountry"));
+      this.debugChar = ".";
     } else {
       
       this.getStats("");
