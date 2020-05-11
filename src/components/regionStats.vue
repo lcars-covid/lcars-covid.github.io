@@ -2,7 +2,7 @@
   <div class="col-lg-6" :class="customClass">
             <h5 class="col-12 text-default text-uppercase d-flex align-items-center justify-content-between mt-3">
           {{ regionName }}
-          <span class="label label-warning ml-3">
+          <span class="label label-warning ml-3 flex-shrink-0">
             <span class="icomoon icon-person_add"></span>
             <span class="strong-text">
               <animated-number
