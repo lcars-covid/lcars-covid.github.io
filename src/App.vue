@@ -416,7 +416,7 @@ export default {
     },
     setEnvironment(setDefaultCountry) {
       this.$cookies.set("defaultCountry", setDefaultCountry);
-      alert(setDefaultCountry+" set as the default country. This will show "+setDefaultCountry+" statistics first when you visit the page again. Note that this currently doesn't work with iOS Safari.");
+      alert(setDefaultCountry+" set as the default country. This will show "+setDefaultCountry+" statistics first when you visit the page again.");
     },
     getStats(country) {
       var fetchURL = "";

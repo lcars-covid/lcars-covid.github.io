@@ -11,7 +11,7 @@
                 :duration="1000"
               />
             </span>
-            <span class="light-text">NEW CASESes</span>
+            <span class="light-text">NEW CASES</span>
           </span>
         </h5>
     <div class="stat-card asian blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">
@@ -21,7 +21,7 @@
           <animated-number
             :value="Number(regionStatsData.cases.total)"
             :formatValue="formatToLocal"
-            :duration="1000"
+            :duration="500"
           />
           <p class="h8 text-uppercase mb-0 text-lg-right">Total Cases</p>
         </h2>
@@ -37,7 +37,7 @@
           <animated-number
             :value="Number(regionStatsData.cases.active)"
             :formatValue="formatToLocal"
-            :duration="1000"
+            :duration="750"
           />
           <p class="h8 text-uppercase mb-0 text-lg-right">Active Cases</p>
         </h2>
@@ -69,7 +69,7 @@
           <animated-number
             :value="Number(regionStatsData.deaths.total)"
             :formatValue="formatToLocal"
-            :duration="1000"
+            :duration="750"
           />
           <p class="h8 text-uppercase mb-0 text-lg-right">Deaths</p>
         </h2>
