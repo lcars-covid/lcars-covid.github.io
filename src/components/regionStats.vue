@@ -11,7 +11,7 @@
                 :duration="1000"
               />
             </span>
-            <span class="light-text">NEW CASES</span>
+            <span class="light-text">NEW CASESes</span>
           </span>
         </h5>
     <div class="stat-card asian blue text-center pt-3 pb-3 pl-3 pr-3 mb-lg-3">

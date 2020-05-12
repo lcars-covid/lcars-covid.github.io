@@ -6,8 +6,16 @@
         class="card mb-2"
         :key="noContinents.country"
       >
-        <div class="card-header bg-info text-uppercase">{{ noContinents.country }}</div>
-        <div class="card-body">
+        <div class="card-header text-uppercase pl-0 pr-0 d-flex justify-content-between">
+          {{ noContinents.country }}
+          <span
+            class="badge badge-pill badge-warning d-flex align-items-center"
+          >
+            <span class="icomoon icon-person_add"></span>
+            +{{ Number(noContinents.cases.new).toLocaleString() }}
+          </span>
+        </div>
+        <div class="card-body pl-0 pr-0">
           <div class="row">
             <div class="col-12 col-lg-6">
               <span class="badge badge-pill badge-info d-flex align-items-center">
@@ -16,15 +24,15 @@
               </span>
             </div>
             <div class="col-12 col-lg-6 mt-1 mt-md-1 mt-lg-0">
-              <span class="badge badge-pill badge-dark d-flex align-items-center">
-                <span class="icomoon icon-skull"></span>
-                {{ Number(noContinents.deaths.total).toLocaleString() }}
+              <span class="badge badge-pill badge-danger d-flex align-items-center">
+                <span class="icomoon icon-hospital-o"></span>
+                {{ Number(noContinents.cases.active).toLocaleString() }}
               </span>
             </div>
             <div class="col-12 col-lg-6 mt-1">
-              <span class="badge badge-pill badge-warning d-flex align-items-center">
-                <span class="icomoon icon-person_add"></span>
-                +{{ Number(noContinents.cases.new).toLocaleString() }}
+              <span class="badge badge-pill badge-dark d-flex align-items-center">
+                <span class="icomoon icon-skull"></span>
+                {{ Number(noContinents.deaths.total).toLocaleString() }}
               </span>
             </div>
             <div class="col-12 col-lg-6 mt-1">
@@ -64,3 +72,13 @@ export default {
   props: ["noContinents"]
 };
 </script>
+
+<style lang="scss" scoped>
+.card {
+  background-color: transparent;
+  border: none;
+  .card-header {
+    background-color: transparent;
+  }
+}
+</style>

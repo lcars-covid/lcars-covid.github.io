@@ -53,7 +53,7 @@
                 @click="getStats(result.country)"
               >{{ result.country }}</b-dropdown-item>
             </b-dropdown>
-            <button class="btn btn-primary" @click="setEnvironment(namedCountry)" style="opacity:0">Set as Start Page</button>
+            <button class="btn btn-primary" @click="setEnvironment(namedCountry)">Set as Start Page</button>
           </div>
         </div>
         <div class="col-md-3 col-6 donut-chart">
@@ -416,7 +416,7 @@ export default {
     },
     setEnvironment(setDefaultCountry) {
       this.$cookies.set("defaultCountry", setDefaultCountry);
-      alert(setDefaultCountry+" set as the default country. This will show "+setDefaultCountry+" statistics first when you visit the page again.");
+      alert(setDefaultCountry+" set as the default country. This will show "+setDefaultCountry+" statistics first when you visit the page again. Note that this currently doesn't work with iOS Safari.");
     },
     getStats(country) {
       var fetchURL = "";
