@@ -510,7 +510,6 @@ a.btn.btn-primary.color-white {
 }
 .regional-stats {
   .icomoon {
-    opacity: 0.15;
     top: auto;
     bottom: rem(-20);
   }

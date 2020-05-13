@@ -8,9 +8,7 @@
       >
         <div class="card-header text-uppercase pl-0 pr-0 d-flex justify-content-between">
           {{ noContinents.country }}
-          <span
-            class="badge badge-pill badge-warning d-flex align-items-center"
-          >
+ <span class="label label-warning ml-3 flex-shrink-0 d-flex align-items-center">
             <span class="icomoon icon-person_add"></span>
             +{{ Number(noContinents.cases.new).toLocaleString() }}
           </span>
@@ -80,5 +78,16 @@ export default {
   .card-header {
     background-color: transparent;
   }
+}
+.label {
+  &.label-warning {
+    height:1rem;
+  }
+}
+.icon-person_add {
+  color:rgba(white,.8);
+  font-size:1.2em;
+  margin-right:.25rem;
+  opacity:1;
 }
 </style>
