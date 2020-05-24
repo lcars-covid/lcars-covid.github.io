@@ -1,48 +1,48 @@
 <template>
   <div class="pt-3">
-    <paginate name="countries" :list="noContinents" :per="12" class="pl-0">
-      <div
-        v-for="noContinents in paginated('countries')"
-        class="card mb-2"
-        :key="noContinents.country"
-      >
-        <div class="card-header text-uppercase pl-0 pr-0 d-flex justify-content-between">
-          {{ noContinents.country }}
- <span class="label label-warning ml-3 flex-shrink-0 d-flex align-items-center">
-            <span class="icomoon icon-person_add"></span>
-            +{{ Number(noContinents.cases.new).toLocaleString() }}
-          </span>
-        </div>
-        <div class="card-body pl-0 pr-0">
-          <div class="row">
-            <div class="col-12 col-lg-6">
-              <span class="badge badge-pill badge-info d-flex align-items-center">
-                <span class="icomoon icon-sphere"></span>
-                {{ Number(noContinents.cases.total).toLocaleString() }}
+    <div class="country-table">
+      <paginate name="countries" :list="noContinents" :per="12" tag="ul" class="pl-0">
+        <li v-for="noContinents in paginated('countries')" :key="noContinents.country">
+          <div class="country-name text-uppercase">
+            <h3 class="row justify-content-between">
+              <span class="col-6">{{ noContinents.country }}</span>
+              <span class="col-6">
+                <span class="badge badge-pill badge-new align-items-center">
+                <span class="icomoon icon-person_add"></span>
+                  <span>+{{ Number(noContinents.cases.new).toLocaleString() }}</span>
+                </span>
               </span>
-            </div>
-            <div class="col-12 col-lg-6 mt-1 mt-md-1 mt-lg-0">
-              <span class="badge badge-pill badge-danger d-flex align-items-center">
-                <span class="icomoon icon-hospital-o"></span>
-                {{ Number(noContinents.cases.active).toLocaleString() }}
-              </span>
-            </div>
-            <div class="col-12 col-lg-6 mt-1">
-              <span class="badge badge-pill badge-dark d-flex align-items-center">
-                <span class="icomoon icon-skull"></span>
-                {{ Number(noContinents.deaths.total).toLocaleString() }}
-              </span>
-            </div>
-            <div class="col-12 col-lg-6 mt-1">
-              <span class="badge badge-pill badge-success d-flex align-items-center">
-                <span class="icomoon icon-man1"></span>
-                {{ Number(noContinents.cases.recovered).toLocaleString() }}
-              </span>
-            </div>
+            </h3>
           </div>
-        </div>
-      </div>
-    </paginate>
+          <div class="country-stats row">
+            <stats class="col-lg-3 col-6">
+              <span class="badge badge-pill badge-active align-items-center">
+                <span class="icomoon icon-hospital-o"></span>
+              </span>
+              {{ Number(noContinents.cases.active).toLocaleString() }}
+            </stats>
+            <stats class="col-lg-3 col-6">
+              <span class="badge badge-pill badge-recovered align-items-center">
+                <span class="icomoon icomoon icon-man1"></span>
+              </span>
+              {{ Number(noContinents.cases.recovered).toLocaleString() }}
+            </stats>
+            <stats class="col-lg-3 col-6">
+              <span class="badge badge-pill badge-dead align-items-center">
+                <span class="icomoon icomoon icon-skull"></span>
+              </span>
+              {{ Number(noContinents.deaths.total).toLocaleString() }}
+            </stats>
+            <stats class="col-lg-3 col-6">
+              <span class="badge badge-pill badge-total align-items-center">
+                <span class="icomoon icon-people_alt"></span>
+              </span>
+              {{ Number(noContinents.cases.total).toLocaleString() }}
+            </stats>
+          </div>
+        </li>
+      </paginate>
+    </div>
     <paginate-links
       for="countries"
       :simple="{
@@ -81,13 +81,67 @@ export default {
 }
 .label {
   &.label-warning {
-    height:1rem;
+    height: 1rem;
   }
 }
 .icon-person_add {
-  color:rgba(white,.8);
-  font-size:1.2em;
-  margin-right:.25rem;
-  opacity:1;
+  color: rgba(white, 0.8);
+  font-size: 1.2em;
+  margin-right: 0.25rem;
+  opacity: 1;
+}
+
+.country-table {
+  border-radius: 0.5rem;
+  background: #328190;
+  padding: 0.5rem;
+  color: #fff;
+  margin-bottom:#{(16/16) * 1rem};
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .country-name {
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+    }
+    .country-stats {
+      font-size: #{(14/16) * 1rem};
+      margin-bottom: #{(8/16) * 1rem};
+      stats {
+        color: #f1d8b7;
+      }
+    }
+  }
+}
+[class^="badge"],
+[badge*=" badge"] {
+  color: rgba(black, 0.4);
+}
+.badge-active {
+  background-color: #f8b4bc;
+}
+.badge-recovered {
+  background-color: #73c2bf;
+}
+.badge-dead {
+  background-color: #525151;
+}
+.badge-total {
+  background-color: #769ae9;
+}
+.badge-new {
+  background-color: #ff9200;
+  font-size: #{(10/16) * 1rem};
+  border-radius:#{(4/16) * 1rem};
+  display: inline-flex;
+  align-items: center;
+  min-width:#{(76/16) * 1rem};
+  .icomoon {
+    color: inherit;
+    padding-right:#{(4/16) * 1rem};
+  }
 }
 </style>
