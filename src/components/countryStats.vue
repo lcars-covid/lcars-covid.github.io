@@ -1,18 +1,16 @@
 <template>
   <div class="pt-3">
     <div class="country-table">
-      <paginate name="countries" :list="noContinents" :per="12" tag="ul" class="pl-0">
+      <paginate name="countries" :list="noContinents" :per="20" tag="ul" class="pl-0">
         <li v-for="noContinents in paginated('countries')" :key="noContinents.country">
-          <div class="country-name text-uppercase">
-            <h3 class="row justify-content-between">
-              <span class="col-6">{{ noContinents.country }}</span>
-              <span class="col-6">
-                <span class="badge badge-pill badge-new align-items-center">
+          <div class="country-name row text-uppercase justify-content-between">
+            <h3 class="col-6">{{ noContinents.country }}</h3>
+            <span class="col-6">
+              <span class="badge badge-pill badge-new align-items-center">
                 <span class="icomoon icon-person_add"></span>
-                  <span>+{{ Number(noContinents.cases.new).toLocaleString() }}</span>
-                </span>
+                <span>+{{ Number(noContinents.cases.new).toLocaleString() }}</span>
               </span>
-            </h3>
+            </span>
           </div>
           <div class="country-stats row">
             <stats class="col-lg-3 col-6">
@@ -94,13 +92,19 @@ export default {
 .country-table {
   border-radius: 0.5rem;
   background: #328190;
-  padding: 0.5rem;
   color: #fff;
-  margin-bottom:#{(16/16) * 1rem};
+  margin-bottom: #{(16/16) * 1rem};
+  overflow: hidden;
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    li {
+      padding: 0.5rem;
+      &:nth-child(2n + 1) {
+        background-color: rgba(white, 0.05);
+      }
+    }
     .country-name {
       h3 {
         margin: 0;
@@ -135,13 +139,13 @@ export default {
 .badge-new {
   background-color: #ff9200;
   font-size: #{(10/16) * 1rem};
-  border-radius:#{(4/16) * 1rem};
+  border-radius: #{(4/16) * 1rem};
   display: inline-flex;
   align-items: center;
-  min-width:#{(76/16) * 1rem};
+  min-width: #{(76/16) * 1rem};
   .icomoon {
     color: inherit;
-    padding-right:#{(4/16) * 1rem};
+    padding-right: #{(4/16) * 1rem};
   }
 }
 </style>

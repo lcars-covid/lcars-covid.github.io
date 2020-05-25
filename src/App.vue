@@ -292,6 +292,7 @@
           </div>
         </div>
         <div class="col-lg-6 col-md-6">
+        <h4 class="text-default text-uppercase mt-3">All Countries</h4>
           <countryStats :noContinents="noContinents"></countryStats>
         </div>
       </div>
