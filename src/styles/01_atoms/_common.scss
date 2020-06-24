@@ -1,0 +1,15 @@
+@import "01atomic-variables";
+@import "02color-variables";
+@import "03atomic-mixins";
+@import "04vuetify-variables";
+@import "radius";
+
+@mixin dark-theme() {
+    html {
+        .theme--dark.v-application {
+            @content;
+        }
+    }
+}
+
+

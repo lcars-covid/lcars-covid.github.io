@@ -1,6 +1,24 @@
-Taken from Webpack tutorial: [https://dev.to/pixelgoo/how-to-configure-webpack-from-scratch-for-a-basic-website-46a5](https://dev.to/pixelgoo/how-to-configure-webpack-from-scratch-for-a-basic-website-46a5)
+# vuetify
 
-In terminal, type the following command:
+## Project setup
+```
+npm install
+```
 
-`> npm install `
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
