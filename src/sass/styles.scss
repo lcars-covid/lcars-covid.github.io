@@ -5,84 +5,201 @@
 @import "chart";
 @import "icons";
 
+body {
+  background:radial-gradient(circle at top left, #19283b 0 , #3a495c 75%); 
+}
+
 .bright-header {
-  background-image:linear-gradient(to right, #DD185A 10%, #FE6702 90%);
+  background-image: linear-gradient(to right, #dd185a 10%, #fe6702 90%);
 }
 
 .navbar-light {
-  color: rgba(scale-color(#DD185A, $lightness: 80%),.8);
+  color: rgba(scale-color(#dd185a, $lightness: 80%), 0.8);
 }
 
 .stat-card {
-  border-radius:rem(8);
+  border-radius: rem(8);
   position: relative;
   &.blue {
-    background-image: linear-gradient(45deg, #19E5D9 10%,#5D78E9 90%);
-    color: rgba(scale-color(#19E5D9, $lightness: 80%),.8);
+    background-image: linear-gradient(45deg, #19e5d9 10%, #5d78e9 90%);
+    color: rgba(scale-color(#19e5d9, $lightness: 80%), 0.8);
     &.asian {
-      background-image: linear-gradient(45deg, #9639a8 10%,#593D90 90%);
-      color: rgba(scale-color(#9639a8, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #9639a8 10%, #593d90 90%);
+      color: rgba(scale-color(#9639a8, $lightness: 80%), 0.8);
     }
     &.euro {
-      background-image: linear-gradient(45deg, rgb(126, 244, 253) 10%,#209AA4 90%);
-      color: rgba(scale-color(#7EFDD8, $lightness: 80%),.8);
+      background-image: linear-gradient(
+        45deg,
+        rgb(126, 244, 253) 10%,
+        #209aa4 90%
+      );
+      color: rgba(scale-color(#7efdd8, $lightness: 80%), 0.8);
     }
     &.afro {
-      background-image: linear-gradient(45deg, #58889C 10%,#486B71 90%);
-      color: rgba(scale-color(#58889C, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #58889c 10%, #486b71 90%);
+      color: rgba(scale-color(#58889c, $lightness: 80%), 0.8);
+    }
+  }
+  &.black {
+    background-image: linear-gradient(45deg, #262626 10%, #212121 90%);
+    color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    &.asian {
+      background-image: linear-gradient(
+        45deg,
+        #262626 10%,
+        #212121 90%
+      );
+      color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    }
+    &.euro {
+      background-image: linear-gradient(45deg, #262626 10%, #212121 90%);
+      color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
+    }
+    &.afro {
+      background-image: linear-gradient(45deg, #262626 10%, #212121 90%);
+      color: rgba(scale-color(#262626, $lightness: 80%), 0.8);
     }
   }
   &.yellow {
-    background-image: linear-gradient(45deg, #FFDC40 10%,#FF8558 90%);
-    color: rgba(scale-color(#FFDC40, $lightness: 80%),.8);
+    background-image: linear-gradient(45deg, #ffdc40 10%, #ff8558 90%);
+    color: rgba(scale-color(#ffdc40, $lightness: 80%), 0.8);
     &.asian {
-      background-image: linear-gradient(45deg, #F4D345 10%,rgb(218, 125, 5) 90%);
-      color: rgba(scale-color(#F4D345, $lightness: 80%),.8);
+      background-image: linear-gradient(
+        45deg,
+        #f4d345 10%,
+        rgb(218, 125, 5) 90%
+      );
+      color: rgba(scale-color(#f4d345, $lightness: 80%), 0.8);
     }
     &.euro {
-      background-image: linear-gradient(45deg, #F05804 10%,#A94918 90%);
-      color: rgba(scale-color(#F05804, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #f05804 10%, #a94918 90%);
+      color: rgba(scale-color(#f05804, $lightness: 80%), 0.8);
     }
     &.afro {
-      background-image: linear-gradient(45deg,#FECF00  10%,#FD521B 90%);
-      color: rgba(scale-color(#FD521B, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #fecf00 10%, #fd521b 90%);
+      color: rgba(scale-color(#fd521b, $lightness: 80%), 0.8);
     }
   }
   &.red {
-    background-image: linear-gradient(45deg, #F54F9F 10%,#FE7474 90%);
-    color: rgba(scale-color(#F54F9F, $lightness: 80%),.8);
+    background-image: linear-gradient(45deg, #f54f9f 10%, #fe7474 90%);
+    color: rgba(scale-color(#f54f9f, $lightness: 80%), 0.8);
     &.asian {
-      background-image: linear-gradient(45deg, #AA0609 10%,#7E0608 90%);
-      color: rgba(scale-color(#AA0609, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #aa0609 10%, #7e0608 90%);
+      color: rgba(scale-color(#aa0609, $lightness: 80%), 0.8);
     }
     &.euro {
-      background-image: linear-gradient(45deg, #F1D407 10%,#D00904 90%);
-      color: rgba(scale-color(#F1D407, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #f1d407 10%, #d00904 90%);
+      color: rgba(scale-color(#f1d407, $lightness: 80%), 0.8);
     }
     &.afro {
-      background-image: linear-gradient(45deg, #D42023 10%,#4F0F03 90%);
-      color: rgba(scale-color(#D42023, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #d42023 10%, #4f0f03 90%);
+      color: rgba(scale-color(#d42023, $lightness: 80%), 0.8);
     }
   }
   &.green {
-    background-image: linear-gradient(45deg, #41E496 10%,#3BB2B6 90%);
-    color: rgba(scale-color(#41E496, $lightness: 80%),.8);
+    background-image: linear-gradient(45deg, #41e496 10%, #3bb2b6 90%);
+    color: rgba(scale-color(#41e496, $lightness: 80%), 0.8);
     &.asian {
-      background-image: linear-gradient(45deg, #6EBBA2 10%,#4A6E51 90%);
-      color: rgba(scale-color(#6EBBA2, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #6ebba2 10%, #4a6e51 90%);
+      color: rgba(scale-color(#6ebba2, $lightness: 80%), 0.8);
     }
     &.euro {
-      background-image: linear-gradient(45deg, #648862 10%,#261C13 90%);
-      color: rgba(scale-color(#648862, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #648862 10%, #261c13 90%);
+      color: rgba(scale-color(#648862, $lightness: 80%), 0.8);
     }
     &.afro {
-      background-image: linear-gradient(45deg, #80600A 10%,#3B3C09 90%);
-      color: rgba(scale-color(#80600A, $lightness: 80%),.8);
+      background-image: linear-gradient(45deg, #80600a 10%, #3b3c09 90%);
+      color: rgba(scale-color(#80600a, $lightness: 80%), 0.8);
     }
   }
 }
 
 .dropdown-menu {
-  max-height:rem(200);
+  max-height: rem(200);
   overflow: scroll;
+  overflow-x: hidden;
+  background-color:rgba(#ffffff,.87);
+  border:0;
+  .dropdown-item {
+    color:rgba(#000000,.87);
+    &:hover {
+      background-color:rgba(#000000,.3);
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: rem(8);
+    height: rem(12);
+    background-color: rgba(#000000,.12); 
+  }
+  
+
+  &::-webkit-scrollbar-thumb {
+      background: #fff; 
+      border-radius: rem(2);
+  }
+}
+
+.custom-info {
+  &.right {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    @include respond-to("lg") {
+      border-radius: rem(16);
+      margin-left: rem(-8);
+      padding: 0 rem(16) rem(16) rem(16);
+    }
+  }
+  &.left {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    @include respond-to("lg") {
+      border-radius: rem(16);
+      margin-right: rem(-8);
+      padding: rem(16) rem(16) rem(4) rem(16);
+    }
+  }
+}
+
+.btn {
+  &:hover {
+    color: rgba(#ffffff,.6);
+  }
+}
+
+[id^="change-country"] {
+  .dropdown-toggle {
+    color:#dd185a;
+    position:relative;
+    &:focus {
+      &:before {
+        transition: transform .25s;
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+    &:before {
+      content:"";
+      position:absolute;
+      right:rem(-8);
+      top:50%;
+      transform: translateY(-50%);
+      border:rem(5) solid transparent;
+      border-top-color:#dd185a ;
+      border-bottom:0;
+    }
+    &:after {
+      content:"(change)";
+      text-transform:uppercase;
+      border:none;
+      font-size:rem(12);
+      color:rgba(#007bff,.87);
+      display:inline-block;
+      margin-left:rem(4);
+    }
+  }
+
 }

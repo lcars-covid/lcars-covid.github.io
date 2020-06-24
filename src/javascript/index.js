@@ -6,6 +6,7 @@ import BootstrapVue from 'bootstrap-vue';
 import VueGraph from 'vue-graph';
 import App from '../App.vue';
 import VuePaginate from 'vue-paginate';
+import VueCookies from 'vue-cookies';
 import '../sass/styles.scss';
  
 Vue.use(VueGraph);
@@ -13,6 +14,9 @@ Vue.filter('numFormat', numFormat(numeral));
 Vue.use(VueFilterDateFormat);
 Vue.use(VuePaginate);
 Vue.use(BootstrapVue);
+Vue.use(VueCookies);
+
+
 
 new Vue({
     el:'#app',
