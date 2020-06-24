@@ -1,5 +1,0 @@
-@each $-text-size, $-value in $bodyTextSize {
-    .text-#{$-text-size} {
-        font-size: #{rem(nth($-value, 2))};
-    }
-}
